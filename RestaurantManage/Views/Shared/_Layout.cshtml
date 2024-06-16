@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string username = ViewBag.username;
+    string role = ViewBag.role;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -94,14 +98,7 @@
                                 <li><a href="comming-soon.html">Coming Soon page</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown submenu">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="/Login" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
-                            @*<ul class="dropdown-menu">
-                            <li><a href="blog.html">Blog with sidebar</a></li>
-                            <li><a href="blog-2column.html">Blog 2 column</a></li>
-                            <li><a href="single-blog.html">Blog details</a></li>
-                            </ul>*@
-                        </li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li class="dropdown submenu">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu">
@@ -111,7 +108,31 @@
                                 <li><a href="checkout.html">Checkout Page</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="dropdown submenu">
+                            @if (@username != null)
+                            {
+                                <li class="dropdown submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="/Login" role="button" aria-haspopup="true" aria-expanded="false">Hi @username</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Account">Thiết lập tài khoản</a></li>
+                                        @if (@role == "Admin")
+                                        {
+                                            <li><a href="product-details.html">Quản lý</a></li>
+                                        }
+                                        <li><a href="@Url.Action("Logout", "Login")">Đăng xuất</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <a class="dropdown-toggle" href="/Login" role="button" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
+                            }
+                            @*<ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog with sidebar</a></li>
+                            <li><a href="blog-2column.html">Blog 2 column</a></li>
+                            <li><a href="single-blog.html">Blog details</a></li>
+                            </ul>*@
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -208,6 +229,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/dcb7ffb312.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

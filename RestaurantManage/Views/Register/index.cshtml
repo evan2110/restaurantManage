@@ -3,11 +3,13 @@
     string error = ViewBag.error;
 }
 <link rel="stylesheet" href="~/css/loginCss.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/dcb7ffb312.js" crossorigin="anonymous"></script>
 <nav>
     <a href="/Home"><img src="img/logo.png" alt="logo"></a>
 </nav>
 <div class="form-wrapper">
-    <form  asp-action="Register" asp-controller="Register" method="post">
+    <p><a href="/Login"><i class="fa-solid fa-arrow-left" style="color: #f9f8fc;"></i> Trở lại</a></p>
+    <form asp-action="Register" asp-controller="Register" method="post">
         <div class="form-control">
             <input name="username" type="text" required>
             <label>Tên đăng nhập</label>
@@ -19,14 +21,14 @@
         <button type="submit">Đăng ký</button>
         <div class="form-help">
             @if (error == "1")
-                {
-                    <span style="color: red;">Tài khoản đã tồn tại!. Vui lòng đăng ký tài khoản khác</span>
-                }
-            else if(error == "0")
+            {
+                <span style="color: red;">Tài khoản đã tồn tại!. Vui lòng đăng ký tài khoản khác</span>
+            }
+            else if (error == "0")
             {
                 <span style="color: green;">Đăng ký thành công <a href="/Login"> Đăng nhập ngay</a></span>
             }
-            
+
         </div>
     </form>
 </div>

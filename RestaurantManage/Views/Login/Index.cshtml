@@ -6,11 +6,13 @@
     string error = ViewBag.error;
 }
 <link rel="stylesheet" href="~/css/loginCss.css" asp-append-version="true" />
+<script src="https://kit.fontawesome.com/dcb7ffb312.js" crossorigin="anonymous"></script>
 <nav>
     <a href="/Home"><img src="img/logo.png" alt="logo"></a>
 </nav>
 <div class="form-wrapper">
-    <form  asp-action="Login" asp-controller="Login" method="post">
+    <p><a href="/Home"><i class="fa-solid fa-arrow-left" style="color: #f9f8fc;"></i> Trở lại</a></p>
+    <form asp-action="Login" asp-controller="Login" method="post">
         <div class="form-control">
             <input name="username" type="text" required>
             <label>Tên đăng nhập</label>
@@ -20,19 +22,20 @@
             <label>Mật khẩu</label>
         </div>
         <button type="submit">Đăng nhập</button>
-        <div class="form-help">
+        @*<div class="form-help">
             <div class="remember-me">
                 <input type="checkbox" id="remember-me">
                 <label for="remember-me">Remember me</label>
             </div>
             <a href="#">Need help?</a>
-            
-        </div>
-        @if(@error == "1"){
+
+        </div>*@
+        @if (@error == "1")
+        {
             <div style="margin-top: 16px;">
                 <p style="color: red;">Tên đăng nhập hoặc mật khẩu không đúng!</p>
             </div>
-            }
+        }
     </form>
     <p>Thành viên mới ?<a href="/Register">Đăng ký ngay</a></p>
 </div>

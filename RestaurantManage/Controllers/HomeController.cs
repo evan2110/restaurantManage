@@ -15,13 +15,13 @@ namespace RestaurantManage.Controllers
 
         public IActionResult Index()
         {
+            string username = HttpContext.Session.GetString("UserName");
+            string role = HttpContext.Session.GetString("Role");
+
+            ViewBag.username = username;
+            ViewBag.role = role;
             return View();
         }
-
-        /*public IActionResult Privacy()
-        {
-            return View();
-        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
