@@ -509,6 +509,10 @@
       "PackagePath": "staticwebassets\\img\\logo-circle-2.png"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo.jpg",
+      "PackagePath": "staticwebassets\\img\\logo.jpg"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },

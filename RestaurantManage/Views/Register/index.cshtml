@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+    string error = ViewBag.error;
+}
+<link rel="stylesheet" href="~/css/loginCss.css" asp-append-version="true" />
+<nav>
+    <a href="/Home"><img src="img/logo.png" alt="logo"></a>
+</nav>
+<div class="form-wrapper">
+    <form  asp-action="Register" asp-controller="Register" method="post">
+        <div class="form-control">
+            <input name="username" type="text" required>
+            <label>Tên đăng nhập</label>
+        </div>
+        <div class="form-control">
+            <input name="password" type="password" required>
+            <label>Mật khẩu</label>
+        </div>
+        <button type="submit">Đăng ký</button>
+        <div class="form-help">
+            @if (error == "1")
+                {
+                    <span style="color: red;">Tài khoản đã tồn tại!. Vui lòng đăng ký tài khoản khác</span>
+                }
+            else if(error == "0")
+            {
+                <span style="color: green;">Đăng ký thành công <a href="/Login"> Đăng nhập ngay</a></span>
+            }
+            
+        </div>
+    </form>
+</div>
