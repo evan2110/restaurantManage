@@ -39,7 +39,7 @@ public class AccountController : Controller
         account.PassWord = password;
         _context.Update(account);
         _context.SaveChanges();
-        error = "0";
+        error = "3";
 
         TempData["error"] = error;
         return RedirectToAction("Index");
