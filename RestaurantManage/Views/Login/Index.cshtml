@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/loginCss.css" asp-append-version="true" />
+<nav>
+    <a href="#"><img src="img/logo.svg" alt="logo"></a>
+</nav>
+<div class="form-wrapper">
+    <form action="#">
+        <div class="form-control">
+            <input type="text" required>
+            <label>Tên đăng nhập</label>
+        </div>
+        <div class="form-control">
+            <input type="password" required>
+            <label>Mật khẩu</label>
+        </div>
+        <button type="submit">Đăng nhập</button>
+        <div class="form-help">
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#">Need help?</a>
+        </div>
+    </form>
+    <p>Thành viên mới ?<a href="#">Đăng ký ngay</a></p>
+    @*<small>
+        This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        <a href="#">Learn more.</a>
+    </small>*@
+</div>

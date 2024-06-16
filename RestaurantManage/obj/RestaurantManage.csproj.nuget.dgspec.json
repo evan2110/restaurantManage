@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C Sharp\\RestaurantManage\\RestaurantManage\\RestaurantManage.csproj": {}
+    "D:\\C Sharp\\restaurantManage\\RestaurantManage\\RestaurantManage.csproj": {}
   },
   "projects": {
-    "D:\\C Sharp\\RestaurantManage\\RestaurantManage\\RestaurantManage.csproj": {
+    "D:\\C Sharp\\restaurantManage\\RestaurantManage\\RestaurantManage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C Sharp\\RestaurantManage\\RestaurantManage\\RestaurantManage.csproj",
+        "projectUniqueName": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\RestaurantManage.csproj",
         "projectName": "RestaurantManage",
-        "projectPath": "D:\\C Sharp\\RestaurantManage\\RestaurantManage\\RestaurantManage.csproj",
+        "projectPath": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\RestaurantManage.csproj",
         "packagesPath": "C:\\Users\\duc21\\.nuget\\packages\\",
-        "outputPath": "D:\\C Sharp\\RestaurantManage\\RestaurantManage\\obj\\",
+        "outputPath": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\duc21\\AppData\\Roaming\\NuGet\\NuGet.Config",

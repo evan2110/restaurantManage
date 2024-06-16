@@ -1,0 +1,1225 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RestaurantManage.bundle.scp.css",
+      "PackagePath": "staticwebassets\\RestaurantManage.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\css\\jquery-ui.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\loginCss.css",
+      "PackagePath": "staticwebassets\\css\\loginCss.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\normalize.css",
+      "PackagePath": "staticwebassets\\css\\normalize.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\picto-foundry-food.css",
+      "PackagePath": "staticwebassets\\css\\picto-foundry-food.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\style-portfolio.css",
+      "PackagePath": "staticwebassets\\css\\style-portfolio.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\favicon-1.ico",
+      "PackagePath": "staticwebassets\\favicon-1.ico"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont3e6e.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont3e6e.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont3e6e.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont3e6e.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont3e6e.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont3e6e.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont3e6e.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont3e6e.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfont3e6e.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont3e6e.woff2"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\fontawesome-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfontd41d.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\icomoonacfe.eot",
+      "PackagePath": "staticwebassets\\fonts\\icomoonacfe.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\icomoonacfe.svg",
+      "PackagePath": "staticwebassets\\fonts\\icomoonacfe.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\icomoonacfe.ttf",
+      "PackagePath": "staticwebassets\\fonts\\icomoonacfe.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\icomoonacfe.woff",
+      "PackagePath": "staticwebassets\\fonts\\icomoonacfe.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\icomoond41d.eot",
+      "PackagePath": "staticwebassets\\fonts\\icomoond41d.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\picto-foundry-food.eot",
+      "PackagePath": "staticwebassets\\fonts\\picto-foundry-food.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\picto-foundry-food.svg",
+      "PackagePath": "staticwebassets\\fonts\\picto-foundry-food.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\picto-foundry-food.ttf",
+      "PackagePath": "staticwebassets\\fonts\\picto-foundry-food.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\fonts\\picto-foundry-food.woff",
+      "PackagePath": "staticwebassets\\fonts\\picto-foundry-food.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\bagel.jpg",
+      "PackagePath": "staticwebassets\\images\\bagel.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\beer.jpg",
+      "PackagePath": "staticwebassets\\images\\beer.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\beer_spec.jpg",
+      "PackagePath": "staticwebassets\\images\\beer_spec.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\bread.jpg",
+      "PackagePath": "staticwebassets\\images\\bread.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\bread1.jpg",
+      "PackagePath": "staticwebassets\\images\\bread1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\bread2.jpg",
+      "PackagePath": "staticwebassets\\images\\bread2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\breakfast.jpg",
+      "PackagePath": "staticwebassets\\images\\breakfast.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\corn.jpg",
+      "PackagePath": "staticwebassets\\images\\corn.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\featured.jpg",
+      "PackagePath": "staticwebassets\\images\\featured.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon01.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon01.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon02.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon02.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon03.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon03.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon04.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon04.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon05.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon05.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon06.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon06.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon07.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon07.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\food_icon08.jpg",
+      "PackagePath": "staticwebassets\\images\\food_icon08.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\kabob.jpg",
+      "PackagePath": "staticwebassets\\images\\kabob.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\limes.jpg",
+      "PackagePath": "staticwebassets\\images\\limes.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\pricing.jpg",
+      "PackagePath": "staticwebassets\\images\\pricing.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\radish.jpg",
+      "PackagePath": "staticwebassets\\images\\radish.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\reservation-seat.jpg",
+      "PackagePath": "staticwebassets\\images\\reservation-seat.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\seeds.jpg",
+      "PackagePath": "staticwebassets\\images\\seeds.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\slider1.jpg",
+      "PackagePath": "staticwebassets\\images\\slider1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\slider2.jpg",
+      "PackagePath": "staticwebassets\\images\\slider2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\slider3.JPG",
+      "PackagePath": "staticwebassets\\images\\slider3.JPG"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\images\\steak.jpg",
+      "PackagePath": "staticwebassets\\images\\steak.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\banner\\banner-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\banner\\banner-bg.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-4.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-5.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-5.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-6.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-6.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-7.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-7.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\column\\blog-c-8.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\column\\blog-c-8.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\latest-news\\l-news-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\latest-news\\l-news-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\latest-news\\l-news-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\latest-news\\l-news-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\latest-news\\l-news-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\latest-news\\l-news-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\main-blog\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\main-blog\\blog-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\main-blog\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\main-blog\\blog-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\main-blog\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\main-blog\\blog-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\main-blog\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\main-blog\\blog-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\main-blog\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\main-blog\\blog-5.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\recent-post\\r-post-1.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\recent-post\\r-post-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\recent-post\\r-post-2.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\recent-post\\r-post-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\recent-post\\r-post-3.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\recent-post\\r-post-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\blog\\recent-post\\r-post-4.jpg",
+      "PackagePath": "staticwebassets\\img\\blog\\recent-post\\r-post-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\arivals-1.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\arivals-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\arivals-2.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\arivals-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\arivals-pic.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\arivals-pic.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-1.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-2.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-3.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-4.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-5.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-5.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-6.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-6.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-7.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-7.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-8.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-8.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\c-feature-9.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\c-feature-9.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\cake-feature\\welcome-right.jpg",
+      "PackagePath": "staticwebassets\\img\\cake-feature\\welcome-right.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\checkout-card.png",
+      "PackagePath": "staticwebassets\\img\\checkout-card.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\chef\\chef-1.jpg",
+      "PackagePath": "staticwebassets\\img\\chef\\chef-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\chef\\chef-2.jpg",
+      "PackagePath": "staticwebassets\\img\\chef\\chef-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\chef\\chef-3.jpg",
+      "PackagePath": "staticwebassets\\img\\chef\\chef-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\client\\client-1.png",
+      "PackagePath": "staticwebassets\\img\\client\\client-1.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\client\\client-2.png",
+      "PackagePath": "staticwebassets\\img\\client\\client-2.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\comment\\comment-1.jpg",
+      "PackagePath": "staticwebassets\\img\\comment\\comment-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\comming-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\comming-bg.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\error-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\error-bg.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\faq-form-right.png",
+      "PackagePath": "staticwebassets\\img\\faq-form-right.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\fav-icon.png",
+      "PackagePath": "staticwebassets\\img\\fav-icon.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\footer-logo.png",
+      "PackagePath": "staticwebassets\\img\\footer-logo.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\hero-img.jpg",
+      "PackagePath": "staticwebassets\\img\\hero-img.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-1.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-10.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-10.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-11.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-11.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-12.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-12.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-13.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-13.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-14.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-14.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-2.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-3.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-4.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-5.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-5.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-6.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-6.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-7.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-7.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-8.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-8.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-9.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\slider-9.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo-2.png",
+      "PackagePath": "staticwebassets\\img\\logo-2.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo-3.png",
+      "PackagePath": "staticwebassets\\img\\logo-3.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo-circle-2.png",
+      "PackagePath": "staticwebassets\\img\\logo-circle-2.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\img\\logo.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\map-marker.png",
+      "PackagePath": "staticwebassets\\img\\map-marker.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\menu-draw-five.png",
+      "PackagePath": "staticwebassets\\img\\menu-draw-five.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\menu-draw.png",
+      "PackagePath": "staticwebassets\\img\\menu-draw.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\menu-left.png",
+      "PackagePath": "staticwebassets\\img\\menu-left.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\menu-right.png",
+      "PackagePath": "staticwebassets\\img\\menu-right.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\our-bakery\\bakery-1.jpg",
+      "PackagePath": "staticwebassets\\img\\our-bakery\\bakery-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\our-bakery\\bakery-2.jpg",
+      "PackagePath": "staticwebassets\\img\\our-bakery\\bakery-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\our-bakery\\bakery-3.jpg",
+      "PackagePath": "staticwebassets\\img\\our-bakery\\bakery-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-1.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-2.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-3.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-4.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-5.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-5.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-6.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-6.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-7.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-7.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-8.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-8.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\portfolio\\portfolio-9.jpg",
+      "PackagePath": "staticwebassets\\img\\portfolio\\portfolio-9.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\cart-img.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\cart-img.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\product-details-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\product-details-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\sale-product\\s-product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\sale-product\\s-product-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\sale-product\\s-product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\sale-product\\s-product-2.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\sale-product\\s-product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\sale-product\\s-product-3.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\product\\sale-product\\s-product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\sale-product\\s-product-4.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\recipe\\recipe-1.png",
+      "PackagePath": "staticwebassets\\img\\recipe\\recipe-1.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\recipe\\special-recipe.jpg",
+      "PackagePath": "staticwebassets\\img\\recipe\\special-recipe.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\restaurant-background-2ez77umko2vj5w02.jpg",
+      "PackagePath": "staticwebassets\\img\\restaurant-background-2ez77umko2vj5w02.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\service-bg.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-1.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-1.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-2.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-2.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-3.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-3.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-4.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-4.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-5.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-5.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\service\\service-6.png",
+      "PackagePath": "staticwebassets\\img\\service\\service-6.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\shop-page-bg.png",
+      "PackagePath": "staticwebassets\\img\\shop-page-bg.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\special\\special-1.png",
+      "PackagePath": "staticwebassets\\img\\special\\special-1.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\special\\special-2.png",
+      "PackagePath": "staticwebassets\\img\\special\\special-2.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\video\\video-1.jpg",
+      "PackagePath": "staticwebassets\\img\\video\\video-1.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\w-left-techture.png",
+      "PackagePath": "staticwebassets\\img\\w-left-techture.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\w-right-techture.png",
+      "PackagePath": "staticwebassets\\img\\w-right-techture.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\welcome-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\welcome-bg.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\comingsoon.js",
+      "PackagePath": "staticwebassets\\js\\comingsoon.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\gmaps.min.js",
+      "PackagePath": "staticwebassets\\js\\gmaps.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery-1.10.2.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.10.2.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery-1.10.2.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.10.2.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery.form.js",
+      "PackagePath": "staticwebassets\\js\\jquery.form.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery.mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.mixitup.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\map-active.js",
+      "PackagePath": "staticwebassets\\js\\map-active.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\js\\theme.js",
+      "PackagePath": "staticwebassets\\js\\theme.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\animate-css\\animate.css",
+      "PackagePath": "staticwebassets\\vendors\\animate-css\\animate.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\datetime-picker\\css\\bootstrap-datetimepicker.min.css",
+      "PackagePath": "staticwebassets\\vendors\\datetime-picker\\css\\bootstrap-datetimepicker.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\datetime-picker\\js\\bootstrap-datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\vendors\\datetime-picker\\js\\bootstrap-datetimepicker.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\datetime-picker\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\vendors\\datetime-picker\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\Flaticon.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\Flaticon.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\Flaticon.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\Flaticon.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\Flaticond41d.eot",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\Flaticond41d.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\flat-icon\\flaticon.css",
+      "PackagePath": "staticwebassets\\vendors\\flat-icon\\flaticon.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\isotope\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\vendors\\isotope\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\isotope\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\vendors\\isotope\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_444444_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_444444_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_555555_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_555555_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_777620_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_777620_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_777777_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_777777_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_cc0000_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_cc0000_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\images\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\images\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\jquery-ui.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\jquery-ui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\vendors\\jquery-ui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\lightbox\\simpleLightbox.css",
+      "PackagePath": "staticwebassets\\vendors\\lightbox\\simpleLightbox.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\lightbox\\simpleLightbox.min.js",
+      "PackagePath": "staticwebassets\\vendors\\lightbox\\simpleLightbox.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.eot",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.svg",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.ttf",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.woff",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.woff2",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Free54e9.woff2"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\fonts\\Linearicons-Freed41d.eot",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\fonts\\Linearicons-Freed41d.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\linearicons\\style.css",
+      "PackagePath": "staticwebassets\\vendors\\linearicons\\style.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\magnifc-popup\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\vendors\\magnifc-popup\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\magnifc-popup\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\vendors\\magnifc-popup\\magnific-popup.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\nice-select\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\vendors\\nice-select\\css\\nice-select.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\nice-select\\js\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\vendors\\nice-select\\js\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\owl-carousel\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\vendors\\owl-carousel\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\owl-carousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\vendors\\owl-carousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\owl-carousel\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\vendors\\owl-carousel\\owl.video.play.html"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\coloredbg.png",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\coloredbg.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\gridtile.png",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\gridtile.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\gridtile_3x3.png",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\gridtile_3x3.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\gridtile_3x3_white.png",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\gridtile_3x3_white.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\gridtile_white.png",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\gridtile_white.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\assets\\loader.gif",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\assets\\loader.gif"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\css\\closedhand.html",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\css\\closedhand.html"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\css\\layers.css",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\css\\layers.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\css\\navigation.css",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\css\\navigation.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\css\\openhand.html",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\css\\openhand.html"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\css\\settings.css",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\css\\settings.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\fonts\\revicons\\revicons90c6.eot",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\fonts\\revicons\\revicons90c6.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\fonts\\revicons\\revicons90c6.svg",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\fonts\\revicons\\revicons90c6.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\fonts\\revicons\\revicons90c6.ttf",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\fonts\\revicons\\revicons90c6.ttf"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\fonts\\revicons\\revicons90c6.woff",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\fonts\\revicons\\revicons90c6.woff"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\extensions\\revolution.extension.actions.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\extensions\\revolution.extension.actions.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\extensions\\revolution.extension.layeranimation.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\extensions\\revolution.extension.layeranimation.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\extensions\\revolution.extension.navigation.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\extensions\\revolution.extension.navigation.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\extensions\\revolution.extension.slideanims.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\extensions\\revolution.extension.slideanims.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\extensions\\revolution.extension.video.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\extensions\\revolution.extension.video.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\jquery.themepunch.revolution.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\jquery.themepunch.revolution.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\revolution\\js\\jquery.themepunch.tools.min.js",
+      "PackagePath": "staticwebassets\\vendors\\revolution\\js\\jquery.themepunch.tools.min.js"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\stroke-icon\\fonts\\Stroke-Gap-Icons.eot",
+      "PackagePath": "staticwebassets\\vendors\\stroke-icon\\fonts\\Stroke-Gap-Icons.eot"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\vendors\\stroke-icon\\style.css",
+      "PackagePath": "staticwebassets\\vendors\\stroke-icon\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RestaurantManage.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.RestaurantManage.props",
+      "PackagePath": "build\\RestaurantManage.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.RestaurantManage.props",
+      "PackagePath": "buildMultiTargeting\\RestaurantManage.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.RestaurantManage.props",
+      "PackagePath": "buildTransitive\\RestaurantManage.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

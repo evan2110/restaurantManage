@@ -9,37 +9,41 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RestaurantManage
 build_property.RootNamespace = RestaurantManage
-build_property.ProjectDir = D:\C Sharp\RestaurantManage\RestaurantManage\
+build_property.ProjectDir = D:\C Sharp\restaurantManage\RestaurantManage\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\C Sharp\RestaurantManage\RestaurantManage
+build_property.MSBuildProjectDirectory = D:\C Sharp\restaurantManage\RestaurantManage
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/Home/Index.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/Home/Privacy.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/Shared/Error.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/_ViewImports.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/_ViewStart.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/C Sharp/RestaurantManage/RestaurantManage/Views/Shared/_Layout.cshtml]
+[D:/C Sharp/restaurantManage/RestaurantManage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-voox5q0x8u
