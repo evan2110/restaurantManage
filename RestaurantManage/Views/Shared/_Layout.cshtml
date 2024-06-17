@@ -45,7 +45,7 @@
     <div class="main_menu_area">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/Home">
                     <img src="img/logo.png" alt="">
                     <img src="img/logo-2.png" alt="">
                 </a>
@@ -69,18 +69,10 @@
                             </ul>*@
                         </li>
                         <li><a href="/Table">Danh sách bàn</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li class="dropdown submenu">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
-                            @*<ul class="dropdown-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="our-team.html">Our Chefs</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            </ul>*@
-                        </li>
+                        <li><a href="">Thực đơn</a></li>
                     </ul>
                     <ul class="navbar-nav justify-content-end">
-                        <li class="dropdown submenu">
+                        @*<li class="dropdown submenu">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu">
                                 <li><a href="service.html">Services</a></li>
@@ -97,9 +89,18 @@
                                 <li><a href="404.html">404 page</a></li>
                                 <li><a href="comming-soon.html">Coming Soon page</a></li>
                             </ul>
-                        </li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        </li>*@
+                        <li><a href="/Contact">Liên hệ</a></li>
+                        
                         <li class="dropdown submenu">
+                                                    <a class="dropdown-toggle" href="/About" role="button" aria-haspopup="true" aria-expanded="false">Về chúng tôi</a>
+                                                    @*<ul class="dropdown-menu">
+                                                    <li><a href="about-us.html">About Us</a></li>
+                                                    <li><a href="our-team.html">Our Chefs</a></li>
+                                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                                    </ul>*@
+                                                </li>
+                        @*<li class="dropdown submenu">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu">
                                 <li><a href="shop.html">Main shop</a></li>
@@ -107,7 +108,7 @@
                                 <li><a href="cart.html">Cart Page</a></li>
                                 <li><a href="checkout.html">Checkout Page</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                         <li class="dropdown submenu">
                             @if (@username != null)
                             {
