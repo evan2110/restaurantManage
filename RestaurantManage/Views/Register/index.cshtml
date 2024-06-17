@@ -15,16 +15,20 @@
             <label>Tên đăng nhập</label>
         </div>
         <div class="form-control">
-            <input name="password" type="password" required>
+            <input name="password" type="password" minlength="6" required>
             <label>Mật khẩu</label>
+        </div>
+        <div class="form-control">
+            <input name="rePassword" type="password" minlength="6" required>
+            <label>Nhập lại mật khẩu</label>
         </div>
         <button type="submit">Đăng ký</button>
         <div class="form-help">
-            @if (error == "1")
+            @if (error != "Ok" && error != "")
             {
-                <span style="color: red;">Tài khoản đã tồn tại!. Vui lòng đăng ký tài khoản khác</span>
+                <span style="color: red;">@error</span>
             }
-            else if (error == "0")
+            else if (error == "Ok")
             {
                 <span style="color: green;">Đăng ký thành công <a href="/Login"> Đăng nhập ngay</a></span>
             }

@@ -27,34 +27,44 @@ namespace RestaurantManage.Controllers
             string error = "";
             Account account = new Account();
             account = _context.Accounts.ToList().SingleOrDefault(e => e.UserName == username && e.PassWord == password);
-            if (account == null)
+            if (username == "" || string.IsNullOrEmpty(username))
             {
-                error = "1";
-            }
-            else
-            {
-                HttpContext.Session.SetString("UserName", username);
-                if (account.Type == 0)
-                {
-                    HttpContext.Session.SetString("Role", "Staff");
-                }
-                else
-                {
-                    HttpContext.Session.SetString("Role", "Admin");
-                }
-                error = "0";
-            }
-            
-            TempData["error"] = error;
-            if (error == "1")
-            {
+                error = "Tên đăng nhập không thể trống"; 
+                TempData["error"] = error;
                 return RedirectToAction("Index");
             }
-            else
+            
+            if (password == "" || string.IsNullOrEmpty(password))
             {
-                return RedirectToAction("Index", "Home");
+                error = "Mật khẩu không thể trống"; 
+                TempData["error"] = error;
+                return RedirectToAction("Index");
             }
             
+            if (password.Length < 6)
+            {
+                error = "Độ dài password không đủ kí tự"; 
+                TempData["error"] = error;
+                return RedirectToAction("Index");
+            }
+            
+            if (account == null)
+            {
+                error = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                TempData["error"] = error;
+                return RedirectToAction("Index");
+            }
+            HttpContext.Session.SetString("UserName", username);
+            if (account.Type == 0)
+            {
+                HttpContext.Session.SetString("Role", "Staff");
+            }
+            else
+            {
+                HttpContext.Session.SetString("Role", "Admin");
+            }
+            
+            return RedirectToAction("Index", "Home");
         }
     }
 }

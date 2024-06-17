@@ -18,7 +18,7 @@
             <label>Tên đăng nhập</label>
         </div>
         <div class="form-control">
-            <input name="password" type="password" required>
+            <input name="password" type="password" minlength="6" required>
             <label>Mật khẩu</label>
         </div>
         <button type="submit">Đăng nhập</button>
@@ -30,10 +30,10 @@
             <a href="#">Need help?</a>
 
         </div>*@
-        @if (@error == "1")
+        @if (error != "")
         {
             <div style="margin-top: 16px;">
-                <p style="color: red;">Tên đăng nhập hoặc mật khẩu không đúng!</p>
+                <p style="color: red;">@error</p>
             </div>
         }
     </form>

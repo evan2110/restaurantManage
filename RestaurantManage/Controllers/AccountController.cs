@@ -33,13 +33,34 @@ public class AccountController : Controller
         string password = accountDto.PassWord.Trim();
         string displayName = accountDto.DisplayName.Trim();
         string error = "";
+        
+        if (username == "" || string.IsNullOrEmpty(username))
+        {
+            error = "Tên đăng nhập không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index");
+        }
+
+        if (password == "" || string.IsNullOrEmpty(password))
+        {
+            error = "Mật khẩu không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index");
+        }
+        
+        if (password.Length < 6)
+        {
+            error = "Độ dài password không đủ kí tự"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index");
+        }
 
         Account account = _context.Accounts.ToList().SingleOrDefault(e => e.UserName == username);
         account.DisplayName = displayName;
         account.PassWord = password;
         _context.Update(account);
         _context.SaveChanges();
-        error = "3";
+        error = "Ok";
 
         TempData["error"] = error;
         return RedirectToAction("Index");
