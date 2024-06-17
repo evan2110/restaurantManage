@@ -1,0 +1,155 @@
+﻿
+@{
+	List<TableFood> tableFoods = ViewBag.tableFoods as List<TableFood>;
+	int countPage = ViewBag.countPage;
+	int page = ViewBag.page;
+}
+
+<section class="banner_area">
+        	<div class="container">
+        		<div class="banner_text">
+        			<h3>Danh sách bàn</h3>
+        			@*<ul>
+        				<li><a href="index.html">Home</a></li>
+        				<li><a href="cakes.html">Services</a></li>
+        			</ul>*@
+        		</div>
+        	</div>
+        </section>
+        <!--================End Main Header Area =================-->
+        
+        <!--================Blog Main Area =================-->
+        <section class="our_cakes_area p_100">
+        	<div class="container">
+        		@*<div class="main_title">
+        			<h2>Our Cakes</h2>
+        			<h5>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</h5>
+        		</div>*@
+		        <div class="cake_feature_row row">
+			        @foreach(var item in tableFoods)
+					{
+						<div class="col-lg-3 col-md-4 col-6">
+							<div class="cake_feature_item">
+								<div class="cake_img">
+									<img src="https://noithatminhkhoi.com/upload/images/ban-an-hinh-tron-danh-cho-nha-hang.jpg" width="270" height="226" alt="">
+								</div>
+								<div class="cake_text">
+									@*<h4>$29</h4>*@
+									<h3>@item.Name</h3>
+									@if (@item.Status == "0")
+									{
+										<a class="pest_btn" href="#">Đặt ngay</a>
+									}
+									else
+									{
+										<a style="color: red;" class="pest_btn" >Hết bàn</a>
+									}
+								</div>
+							</div>
+						</div>
+					}
+			        <nav class="ml-auto" aria-label="...">
+				        <ul class="pagination justify-content-end">
+					        <li class="page-item @(page == 1 ? "disabled" : "")">
+						        <a class="page-link" href="/Table?page=@(page-1)" tabindex="-1">Trang trước</a>
+					        </li>
+					        
+					        @for (int i = 1; i <= @countPage; i++)
+					        {
+						        <li class="page-item @(i == page ? "active" : "")"><a class="page-link" href="/Table?page=@i">@i</a></li>
+					        }
+					        @*<li class="page-item active">
+                          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>*@
+					        <li class="page-item @(page == countPage ? "disabled" : "")">
+                                <a class="page-link" href="/Table?page=@(page+1)" tabindex="-1">Trang sau</a>
+                            </li>
+				        </ul>
+                    </nav>
+		        </div>
+        	</div>
+        </section>
+<!--================End Blog Main Area =================-->
+
+		
+        
+<!--================Special Recipe Area =================-->
+        <section class="special_recipe_area">
+        	<div class="container">
+        		<div class="special_recipe_slider owl-carousel">
+        			<div class="item">
+        				<div class="media">
+        					<div class="d-flex">
+        						<img src="img/recipe/recipe-1.png" alt="">
+        					</div>
+        					<div class="media-body">
+        						<h4>Special Recipe</h4>
+        						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi equatur uis autem vel eum.</p>
+        						<a class="w_view_btn" href="#">View Details</a>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="item">
+        				<div class="media">
+        					<div class="d-flex">
+        						<img src="img/recipe/recipe-1.png" alt="">
+        					</div>
+        					<div class="media-body">
+        						<h4>Special Recipe</h4>
+        						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi equatur uis autem vel eum.</p>
+        						<a class="w_view_btn" href="#">View Details</a>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="item">
+        				<div class="media">
+        					<div class="d-flex">
+        						<img src="img/recipe/recipe-1.png" alt="">
+        					</div>
+        					<div class="media-body">
+        						<h4>Special Recipe</h4>
+        						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi equatur uis autem vel eum.</p>
+        						<a class="w_view_btn" href="#">View Details</a>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="item">
+        				<div class="media">
+        					<div class="d-flex">
+        						<img src="img/recipe/recipe-1.png" alt="">
+        					</div>
+        					<div class="media-body">
+        						<h4>Special Recipe</h4>
+        						<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi equatur uis autem vel eum.</p>
+        						<a class="w_view_btn" href="#">View Details</a>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+<!--================End Special Recipe Area =================-->
+		
+        
+        <!--================Newsletter Area =================-->
+        <section class="newsletter_area">
+        	<div class="container">
+        		<div class="row newsletter_inner">
+        			<div class="col-lg-6">
+        				<div class="news_left_text">
+        					<h4>Join our Newsletter list to get all the latest offers, discounts and other benefits</h4>
+        				</div>
+        			</div>
+        			<div class="col-lg-6">
+        				<div class="newsletter_form">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Enter your email address">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">Subscribe Now</button>
+								</div>
+							</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
