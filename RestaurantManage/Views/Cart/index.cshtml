@@ -1,0 +1,197 @@
+﻿@{
+	string tableNm = ViewBag.tableNm;
+	int tableId = ViewBag.tableId;
+	List<FoodCategory> foodCategories = ViewBag.foodCategories as List<FoodCategory>;
+	List<Food> foods = ViewBag.foods as List<Food>;
+	int splitIndex = (int)Math.Ceiling(foods.Count / 2.0);
+
+}
+
+
+
+<section class="banner_area">
+        	<div class="container">
+        		<div class="banner_text">
+        			<h3>Chọn món ăn cho @tableNm</h3>
+        			@*<ul>
+        				<li><a href="index.html">Home</a></li>
+        				<li><a href="portfolio.html">Portfolio</a></li>
+        			</ul>*@
+        		</div>
+        	</div>
+        </section>
+        <!--================End Main Header Area =================-->
+        
+        <!--================Portfolio Area Area =================-->
+        <section class="portfolio_area p_100">
+	        <div class="container">
+		        <div class="portfolio_filter">
+			        <ul class="list_style">
+				        <li class="active" data-filter="*"><a href="/Cart?tableNm=@tableNm&tableId=@tableId">Tất cả</a></li>
+				        @foreach (var item in foodCategories)
+				        {
+					        <li data-filter=".cake"><a href="/Cart?idCategory=@item.Id&tableNm=@tableNm&tableId=@tableId">@item.Name</a></li>
+				        }
+			        </ul>
+		        </div>
+		        <div class="row">
+			        <div class="col-lg-6">
+				        <div class="discover_item_inner">
+					        @for (int i = 0; i < splitIndex; i++)
+					        {
+						        <div class="discover_item">
+							        <h4>@foods[i].Name</h4>
+							        <p> <input type="number" class="form-control quantity-selector" 
+                                                                               aria-live="polite" name="quantity" title="quantity" 
+                                                                               value="0" min="0" max="10" step="1" 
+                                                                               data-price="@foods[i].Price" 
+                                                                               aria-label="Quantity selector">
+								        <span>@foods[i].Price đ</span></p>
+						        </div>
+					        }
+					        <div class="discover_item">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div>
+                                        <form id="discount-form" class="form-inline" onsubmit="applyDiscount(event)">
+                                            <div class="form-group">
+                                                <input type="text" id="discount-code" class="form-control" placeholder="Mã giảm giá">
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary ml-2">Áp dụng</button>
+                                        </form>
+                                    </div>
+                                    <div>
+										<span id="total-price" class="font-weight-bold" style="font-size: 22px;">Total: 0 đ</span> 
+                                    </div>
+                                    
+                                </div>
+                            </div>
+				        </div>
+			        </div>
+			        <div class="col-lg-6">
+				        <div class="discover_item_inner">
+					        @for (int i = splitIndex; i < foods.Count; i++)
+					        {
+						        <div class="discover_item">
+							        <h4>@foods[i].Name</h4>
+							        <p> <input type="number" class="form-control quantity-selector" 
+                                                                               aria-live="polite" name="quantity" title="quantity" 
+                                                                               value="0" min="0" max="10" step="1" 
+                                                                               data-price="@foods[i].Price" 
+                                                                               aria-label="Quantity selector">
+								        <span>@foods[i].Price đ</span></p>
+						        </div>
+					        }
+					        
+					        <div class="cart_footer">
+                                <form id="order-form"  asp-action="AddBill" asp-controller="Cart" method="post">
+                                    <input type="hidden" name="foods" id="foods-input">
+                                    <input type="hidden" name="total" id="total-input">
+                                    <input type="hidden" name="tableId" value="@tableId">
+                                    <button type="button" class="pest_btn" onclick="submitOrder()">Xác nhận đặt bàn</button>
+                                </form>
+                            </div>
+				        </div>
+			        </div>
+			        @*<nav style="margin-top: 16px;" class="ml-auto" aria-label="...">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item ">
+                    	        <a class="page-link" href="" tabindex="-1">Trang trước</a>
+                            </li>
+                    	    <li class="page-item "><a class="page-link" href=""></a></li>
+                            <li class="page-item ">
+                                <a class="page-link" href="" tabindex="-1">Trang sau</a>
+                            </li>
+                        </ul>
+                    </nav>*@
+		        </div>
+		        
+                <div style="margin-top: 25px;" class="row our_bakery_image">
+                	<div class="col-md-4 col-6">
+                		<img class="img-fluid" src="img/our-bakery/bakery-1.jpg" alt="">
+                	</div>
+                	<div class="col-md-4 col-6">
+                		<img class="img-fluid" src="img/our-bakery/bakery-2.jpg" alt="">
+                	</div>
+                	<div class="col-md-4 col-6">
+                		<img class="img-fluid" src="img/our-bakery/bakery-3.jpg" alt="">
+                	</div>
+                </div>
+	        </div>
+        </section>
+        <!--================End Portfolio Area Area =================-->
+        
+        <!--================Newsletter Area =================-->
+<section class="newsletter_area">
+	<div class="container">
+		<div class="row newsletter_inner">
+			<div class="col-lg-6">
+				<div class="news_left_text">
+					<h4>Join our Newsletter list to get all the latest offers, discounts and other benefits</h4>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="newsletter_form">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter your email address">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" type="button">Subscribe Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const quantitySelectors = document.querySelectorAll('.quantity-selector');
+        const totalPriceElement = document.getElementById('total-price');
+        let discount = 0;
+
+        quantitySelectors.forEach(input => {
+            input.addEventListener('input', updateTotalPrice);
+        });
+
+        function updateTotalPrice() {
+            let total = 0;
+            quantitySelectors.forEach(input => {
+                const price = parseFloat(input.getAttribute('data-price'));
+                const quantity = parseInt(input.value);
+                total += price * quantity;
+            });
+            total -= discount; // Áp dụng giảm giá
+            if (total < 0) total = 0; // Tổng tiền không thể âm
+            totalPriceElement.textContent = `Total: ${total.toFixed(2)} đ`;
+        }
+
+        window.applyDiscount = function(event) {
+            event.preventDefault();
+            const discountCode = document.getElementById('discount-code').value;
+            if (discountCode === 'Duck2024') {
+                discount = 20000;
+            } else {
+                discount = 0;
+            }
+            updateTotalPrice();
+			}
+			
+			 window.submitOrder = function() {
+				const foods = [];
+				quantitySelectors.forEach(input => {
+					const foodId = input.getAttribute('data-id');
+					const quantity = parseInt(input.value);
+					if (quantity > 0) {
+						foods.push({ id: foodId, quantity: quantity });
+					}
+				});
+	
+				const total = parseFloat(totalPriceElement.textContent.replace('Total: ', '').replace(' đ', ''));
+	
+				document.getElementById('foods-input').value = JSON.stringify(foods);
+				document.getElementById('total-input').value = total;
+	
+				document.getElementById('order-form').submit();
+				}
+    });
+</script>
