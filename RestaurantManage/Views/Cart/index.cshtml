@@ -44,7 +44,7 @@
 							        <p> <input type="number" class="form-control quantity-selector" 
                                                                                aria-live="polite" name="quantity" title="quantity" 
                                                                                value="0" min="0" max="10" step="1" 
-                                                                               data-price="@foods[i].Price" 
+                                                                               data-price="@foods[i].Price"  data-id="@foods[i].Id"
                                                                                aria-label="Quantity selector">
 								        <span>@foods[i].Price đ</span></p>
 						        </div>
@@ -76,7 +76,7 @@
 							        <p> <input type="number" class="form-control quantity-selector" 
                                                                                aria-live="polite" name="quantity" title="quantity" 
                                                                                value="0" min="0" max="10" step="1" 
-                                                                               data-price="@foods[i].Price" 
+                                                                               data-price="@foods[i].Price" data-id="@foods[i].Id"
                                                                                aria-label="Quantity selector">
 								        <span>@foods[i].Price đ</span></p>
 						        </div>
@@ -179,13 +179,13 @@
 			 window.submitOrder = function() {
 				const foods = [];
 				quantitySelectors.forEach(input => {
-					const foodId = input.getAttribute('data-id');
+					const foodId = parseInt(input.getAttribute('data-id'));
 					const quantity = parseInt(input.value);
 					if (quantity > 0) {
-						foods.push({ id: foodId, quantity: quantity });
+						foods.push({ Id: foodId, Quantity: quantity });
 					}
 				});
-	
+	 			
 				const total = parseFloat(totalPriceElement.textContent.replace('Total: ', '').replace(' đ', ''));
 	
 				document.getElementById('foods-input').value = JSON.stringify(foods);

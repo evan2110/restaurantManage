@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 using RestaurantManage.DTOs;
 using RestaurantManage.Models;
 
@@ -10,6 +11,12 @@ public class CartController : Controller
     // GET
     public IActionResult Index(string? tableNm, int? tableId, int? idCategory)
     {
+        string username = HttpContext.Session.GetString("UserName");
+        string role = HttpContext.Session.GetString("Role");
+
+        ViewBag.username = username;
+        ViewBag.role = role;
+        
         tableNm = tableNm ?? "";
         tableId = tableId ?? 0;
         idCategory = idCategory ?? 0;
@@ -36,21 +43,22 @@ public class CartController : Controller
     [HttpPost]
     public IActionResult AddBill(BillDTO billDto)
     {
-        _context.Bills.Add(new Bill()
-            { DateCheckIn = DateTime.Now, IdTable = billDto.tableId, Status = 0, TotalPrice = billDto.Total });
+        var bill = new Bill
+            { DateCheckIn = DateTime.Now, IdTable = billDto.tableId, Status = 0, TotalPrice = billDto.Total };
+        _context.Bills.Add(bill);
         _context.SaveChanges();
         var tableFood = _context.TableFoods.SingleOrDefault(e => e.Id == billDto.tableId);
         tableFood.Status = "1";
         _context.Update(tableFood);
         _context.SaveChanges();
-        /*foreach (var item in billDto.FoodOrderDtos)
+        List<FoodOrderDTO> foodOrders = JsonSerializer.Deserialize<List<FoodOrderDTO>>(billDto.Foods);
+
+        foreach (var item in foodOrders)
         {
-            if (item.Quantity > 0)
-            {
-                _context.BillInfos.Add(
-            }
-        }*/
-        
-        return RedirectToAction("Index", "Home");
+          _context.BillInfos.Add(new BillInfo(){IdBill = bill.Id, IdFood = item.Id, Count = item.Quantity});
+          _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index", "History");
     }
 }

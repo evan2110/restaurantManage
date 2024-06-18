@@ -119,6 +119,9 @@
                                         @if (@role == "Admin")
                                         {
                                             <li><a href="product-details.html">Quản lý</a></li>
+                                        }else if (@role == "Staff")
+                                        {
+                                            <li><a href="/History">Lịch sử đặt bàn</a></li>
                                         }
                                         <li><a href="@Url.Action("Logout", "Login")">Đăng xuất</a></li>
                                     </ul>
