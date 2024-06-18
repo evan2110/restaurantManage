@@ -2,6 +2,8 @@
 
 @{
 	List<Bill> bills = ViewBag.bills as List<Bill>;
+	int countPage = ViewBag.countPage;
+	int page = ViewBag.page;
 }
 
 @*
@@ -10,55 +12,70 @@
 <a class="btn btn-success" style="float:left;margin-right:20px;" href="" target="_blank">Lịch sử đặt bàn</a>
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 	<thead>
-		<tr>
-			<th>Mã đơn</th>
-			<th>Ngày đặt</th>
-			<th>Ngày thanh toán</th>
-			<th>Tên bàn</th>
-			<th>Trạng thái</th>
-			<th>Tổng tiền</th>
-		</tr>
-	</thead>
-<tbody>
-@foreach (var item in @bills)
-{
 	<tr>
-		<td>@item.Id</td>
-		<td>@item.DateCheckIn</td>
-		<td>@item.DateCheckOut</td>
-		<td>@item.IdTableNavigation.Name</td>
-		<td>
-            @(item.Status == 1 ? "Đã thanh toán" : "Chưa thanh toán")
-        </td>
-		<td>@item.TotalPrice</td>
-		<td>
-			<button style="margin-right: 16px;" type="button" class="btn btn-primary btn-sm">Chỉnh sửa</button>
-			<button type="button" class="btn btn-danger btn-sm">Hủy</button>
-		</td>
+		<th>Mã đơn</th>
+		<th>Ngày đặt</th>
+		<th>Ngày thanh toán</th>
+		<th>Tên bàn</th>
+		<th>Trạng thái</th>
+		<th>Tổng tiền</th>
 	</tr>
-}
-</tbody>
+	</thead>
+	<tbody>
+	@foreach (var item in @bills)
+	{
+		<tr>
+			<td>@item.Id</td>
+			<td>@item.DateCheckIn</td>
+			<td>@item.DateCheckOut</td>
+			<td>@item.IdTableNavigation.Name</td>
+			<td>
+				@if (item.Status == 1)
+				{
+					<span style="color: green;">Đã thanh toán</span>
+				}
+				else if (item.Status == 2)
+				{
+					<span style="color: red;">Đã hủy</span>
+				}
+				else
+				{
+					<span>Chưa thanh toán</span>
+				}
+			</td>
+			<td>@item.TotalPrice đ</td>
+			<td>
+				<button style="margin-right: 8px;" type="button" class="btn btn-primary btn-sm detail">Chi tiết</button>
+				@if (item.Status == 0)
+				{
+					<button style="margin-right: 8px;" type="button" class="btn btn-success btn-sm done">Hoàn thành</button>
+					<button type="button" class="btn btn-danger btn-sm">Hủy</button>
+				}
+			</td>
+		</tr>
+	}
+
+	</tbody>
 </table>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Row information </h4>
-			</div>
-			<div class="modal-body">
-        
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-
-	</div>
+<div>
+	<nav style="margin-right: 50px;" class="ml-auto" aria-label="...">
+            <ul class="pagination justify-content-end">
+                <li class="page-item @(page == 1 ? "disabled" : "")">
+        	        <a class="page-link" href="/History?page=@(page-1)" tabindex="-1">Trang trước</a>
+                </li>
+                
+                @for (int i = 1; i <= @countPage; i++)
+                {
+        	        <li class="page-item @(i == page ? "active" : "")"><a class="page-link" href="/History?page=@i">@i</a></li>
+                }
+                @*<li class="page-item active">
+              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>*@
+                <li class="page-item @(page == countPage ? "disabled" : "")">
+                    <a class="page-link" href="/History?page=@(page+1)" tabindex="-1">Trang sau</a>
+                </li>
+            </ul>
+        </nav>
 </div>
 
 <script>
@@ -72,12 +89,91 @@
 
                 // Hiển thị hộp thoại xác nhận
                 if (confirm('Bạn có chắc chắn muốn hủy đơn có mã ' + id + ' không?')) {
-                    // Thực hiện hành động hủy ở đây
-                    // Ví dụ: gọi hàm xử lý hủy bằng AJAX
-                    // Xóa dòng này (row) sau khi xử lý hủy thành công
+                    // Tạo một form ẩn
+					var form = document.createElement('form');
+					form.style.display = 'none'; // Ẩn form đi
+	
+					// Thiết lập các thuộc tính của form
+					form.method = 'POST';
+					form.action = '/History/CancelBill'; // Thay đổi đường dẫn nếu cần thiết
+	
+					// Tạo input chứa id của hóa đơn
+					var inputId = document.createElement('input');
+					inputId.type = 'hidden';
+					inputId.name = 'id'; // Đặt tên field
+					inputId.value = id; // Đặt giá trị của field
+	
+					// Thêm input vào form
+					form.appendChild(inputId);
+	
+					// Thêm form vào body của trang web
+					document.body.appendChild(form);
+	
+					// Submit form để gọi đến controller và phương thức tương ứng
+					form.submit();
                     row.remove();
                 }
             });
         });
+		
+		var btnDone = document.querySelectorAll('.done');
+			btnDone.forEach(function(btnDanger) {
+				btnDanger.addEventListener('click', function() {
+					var row = this.closest('tr');
+					var id = row.querySelector('td:first-child').textContent;
+	
+					// Hiển thị hộp thoại xác nhận
+					if (confirm('Bạn có chắc chắn muốn hoàn thành đơn có mã ' + id + ' không?')) {
+						// Tạo một form ẩn
+						var form = document.createElement('form');
+						form.style.display = 'none'; // Ẩn form đi
+		
+						// Thiết lập các thuộc tính của form
+						form.method = 'POST';
+						form.action = '/History/ConfirmBill'; // Thay đổi đường dẫn nếu cần thiết
+		
+						// Tạo input chứa id của hóa đơn
+						var inputId = document.createElement('input');
+						inputId.type = 'hidden';
+						inputId.name = 'id'; // Đặt tên field
+						inputId.value = id; // Đặt giá trị của field
+		
+						// Thêm input vào form
+						form.appendChild(inputId);
+		
+						// Thêm form vào body của trang web
+						document.body.appendChild(form);
+		
+						// Submit form để gọi đến controller và phương thức tương ứng
+						form.submit();
+						//row.remove();
+					}
+				});
+			});
+				
+			var btnDetail = document.querySelectorAll('.detail');
+				btnDetail.forEach(function(btnDanger) {
+					btnDanger.addEventListener('click', function() {
+						var row = this.closest('tr');
+						var id = row.querySelector('td:first-child').textContent;
+		
+						var form = document.createElement('form');
+						form.style.display = 'none'; 
+		
+						form.method = 'GET';
+						form.action = '/DetailBill'; 
+		
+						var inputId = document.createElement('input');
+						inputId.type = 'hidden';
+						inputId.name = 'id'; 
+						inputId.value = id; 
+		
+						form.appendChild(inputId);
+		
+						document.body.appendChild(form);
+		
+						form.submit();
+					});
+				});
 	});
     </script>	
