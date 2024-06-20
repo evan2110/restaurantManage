@@ -11,15 +11,6 @@ public class AccountController : Controller
     public IActionResult Index()
     {
         string username = HttpContext.Session.GetString("UserName");
-        string role = HttpContext.Session.GetString("Role");
-
-        ViewBag.username = username;
-        ViewBag.role = role;
-        if (username == null)
-        {
-            return View("~/Views/Shared/AuthenErr.cshtml");
-        }
-
         Account account = _context.Accounts.SingleOrDefault(e => e.UserName == username);
         ViewBag.account = account;
         ViewBag.error = TempData["error"];

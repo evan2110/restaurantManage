@@ -1,3 +1,5 @@
+using RestaurantManage.Middlewares;
+
 namespace RestaurantManage
 {
     public class Program
@@ -14,6 +16,7 @@ namespace RestaurantManage
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+            builder.Services.AddHttpContextAccessor();
 
             var app = builder.Build();
 
@@ -33,9 +36,32 @@ namespace RestaurantManage
             app.UseAuthorization();
             app.UseSession();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapWhen(context =>
+            {
+                return (context.Request.Path.StartsWithSegments("/Cart") && context.Request.Method == "GET")
+                        || (context.Request.Path.StartsWithSegments("/Account") && context.Request.Method == "GET")
+                        || (context.Request.Path.StartsWithSegments("/History") && context.Request.Method == "GET")
+                        /*|| (context.Request.Path.StartsWithSegments("/") && context.Request.Method == "GET")*/
+                        || (context.Request.Path.StartsWithSegments("/Detail") && context.Request.Method == "GET");
+            }, appBuilder =>
+            {
+                appBuilder.UseMiddleware<AuthenticationMiddleware>();
+                appBuilder.UseRouting();
+                appBuilder.UseAuthorization();
+                appBuilder.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.Run();
         }

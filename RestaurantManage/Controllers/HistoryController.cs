@@ -12,8 +12,6 @@ public class HistoryController : Controller
     public IActionResult Index(int? page)
     {
         page = page ?? 1;
-        string username = HttpContext.Session.GetString("UserName");
-        string role = HttpContext.Session.GetString("Role");
         List<Bill> bills = new List<Bill>();
         List<Bill> totalBills = new List<Bill>();
         
@@ -25,8 +23,6 @@ public class HistoryController : Controller
        
         ViewBag.countPage = countPage;
         ViewBag.page = page;
-        ViewBag.username = username;
-        ViewBag.role = role;
         ViewBag.bills = bills;
         
         return View();

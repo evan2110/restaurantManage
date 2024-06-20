@@ -10,14 +10,10 @@ public class DetailBillController : Controller
     // GET
     public IActionResult Index(int? id)
     {
-        string username = HttpContext.Session.GetString("UserName");
-        string role = HttpContext.Session.GetString("Role");
         id = id ?? 0;
         var bill = _context.Bills.Include(e => e.BillInfos).ThenInclude(e => e.IdFoodNavigation).SingleOrDefault(e => e.Id == id);
         var tables = _context.TableFoods.Where(e => e.Status == "0").ToList();
         
-        ViewBag.username = username;
-        ViewBag.role = role;
         ViewBag.bill = bill;
         ViewBag.tables = tables;
         return View();

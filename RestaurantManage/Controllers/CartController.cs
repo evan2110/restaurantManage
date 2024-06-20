@@ -11,12 +11,6 @@ public class CartController : Controller
     // GET
     public IActionResult Index(string? tableNm, int? tableId, int? idCategory)
     {
-        string username = HttpContext.Session.GetString("UserName");
-        string role = HttpContext.Session.GetString("Role");
-
-        ViewBag.username = username;
-        ViewBag.role = role;
-        
         tableNm = tableNm ?? "";
         tableId = tableId ?? 0;
         idCategory = idCategory ?? 0;

@@ -1,6 +1,9 @@
-﻿@{
-    string username = ViewBag.username;
-    string role = ViewBag.role;
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    string username = HttpContextAccessor.HttpContext.Session.GetString("UserName");
+    string role = HttpContextAccessor.HttpContext.Session.GetString("Role");
 }
 <!DOCTYPE html>
 <html lang="en">
