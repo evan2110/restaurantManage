@@ -25,6 +25,14 @@ public class DetailBillController : Controller
         if (idTableChange != 0)
         {
             var bill = _context.Bills.SingleOrDefault(e => e.Id == idBill);
+            var table = _context.TableFoods.SingleOrDefault(e => e.Id == bill.IdTable);
+            table.Status = "0";
+            _context.Update(table);
+            _context.SaveChanges();
+            var tableChange = _context.TableFoods.SingleOrDefault(e => e.Id == idTableChange);
+            tableChange.Status = "1";
+            _context.Update(tableChange);
+            _context.SaveChanges();
             bill.IdTable = idTableChange;
             _context.Update(bill);
             _context.SaveChanges();

@@ -1,0 +1,107 @@
+﻿@{
+	List<FoodCategory> foodCategories = ViewBag.foodCategories as List<FoodCategory>;
+	List<Food> foods = ViewBag.foods as List<Food>;
+	int splitIndex = (int)Math.Ceiling(foods.Count / 2.0);
+	int countPage = ViewBag.countPage;
+	int page = ViewBag.page;
+	int idCategory = ViewBag.idCategory;
+}
+
+<section class="banner_area">
+        	<div class="container">
+        		<div class="banner_text">
+        			<h3>Thực đơn</h3>
+        			@*<ul>
+        				<li><a href="index.html">Home</a></li>
+        				<li><a href="portfolio.html">Portfolio</a></li>
+        			</ul>*@
+        		</div>
+        	</div>
+        </section>
+        <!--================End Main Header Area =================-->
+        
+        <!--================Portfolio Area Area =================-->
+        <section class="portfolio_area p_100">
+        	<div class="container">
+        		<div class="portfolio_filter">
+					<ul class="list_style">
+                        <li class="@(idCategory == 0 ? "active" : "")" data-filter="*"><a href="/Menu">Tất cả</a></li>
+                        @foreach (var item in foodCategories)
+                        {
+                            // Kiểm tra nếu idCategory từ query string trùng với item.Id
+                            var isActive = idCategory == item.Id ? "active" : "";
+                            <li class="@(isActive)" data-filter=".cake"><a href="/Menu?idCategory=@item.Id">@item.Name</a></li>
+                        }
+                    </ul>
+				</div>
+		        <div class="row">
+                    <div class="col-lg-6">
+                        <div class="discover_item_inner">
+                	        @for (int i = 0; i < splitIndex; i++)
+                	        {
+                		        <div class="discover_item">
+                			        <h4>@foods[i].Name</h4>
+                			        <p> @foods[i].Name
+                				        <span>@foods[i].Price đ</span></p>
+                		        </div>
+                	        }
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="discover_item_inner">
+                	        @for (int i = splitIndex; i < foods.Count; i++)
+                	        {
+                		        <div class="discover_item">
+                			        <h4>@foods[i].Name</h4>
+                			        <p> @foods[i].Name
+                				        <span>@foods[i].Price đ</span></p>
+                		        </div>
+                	        }
+                	        
+                        </div>
+                    </div>
+                    <nav style="margin-top: 16px;" class="ml-auto" aria-label="...">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item @(page == 1 ? "disabled" : "")">
+                                <a class="page-link" href="/Menu?page=@(page-1)&idCategory=@idCategory" tabindex="-1">Trang trước</a>
+                            </li>
+                            
+                            @for (int i = 1; i <= @countPage; i++)
+                            {
+                                <li class="page-item @(i == page ? "active" : "")"><a class="page-link" href="/Menu?page=@i&idCategory=@idCategory">@i</a></li>
+                            }
+                            @*<li class="page-item active">
+                          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>*@
+                            <li class="page-item @(page == countPage ? "disabled" : "")">
+                                <a class="page-link" href="/Menu?page=@(page+1)&idCategory=@idCategory" tabindex="-1">Trang sau</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+        	</div>
+        </section>
+        <!--================End Portfolio Area Area =================-->
+        
+        <!--================Newsletter Area =================-->
+        <section class="newsletter_area">
+            <div class="container">
+                <div class="row newsletter_inner">
+                    <div class="col-lg-6">
+                        <div class="news_left_text">
+                            <h4>Tham gia danh sách Bản tin của chúng tôi để nhận tất cả các ưu đãi mới nhất, giảm giá và các lợi ích khác</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="newsletter_form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Nhập địa chỉ email của bạn">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Đăng ký ngay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

@@ -61,57 +61,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="dropdown submenu active">
-                            <a class="dropdown-toggle" href="/Home" role="button" aria-haspopup="true" aria-expanded="false">Trang chủ</a>
-                            @*<ul class="dropdown-menu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index-2.html">Home 2</a></li>
-                            <li><a href="index-3.html">Home 3</a></li>
-                            <li><a href="index-4.html">Home 4</a></li>
-                            <li><a href="index-5.html">Home 5</a></li>
-                            </ul>*@
-                        </li>
+                        <li class="dropdown submenu"><a class="dropdown-toggle" href="/Home" role="button" aria-haspopup="true" aria-expanded="false">Trang chủ</a></li>
                         <li><a href="/Table">Danh sách bàn</a></li>
-                        <li><a href="">Thực đơn</a></li>
+                        <li><a href="/Menu">Thực đơn</a></li>
                     </ul>
                     <ul class="navbar-nav justify-content-end">
-                        @*<li class="dropdown submenu">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="service.html">Services</a></li>
-                                <li class="dropdown submenu">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio.html">-  Gallery Classic</a></li>
-                                        <li><a href="portfolio-full-width.html">-  Gallery Full width</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="faq.html">Faq</a></li>
-                                <li><a href="what-we-make.html">What we make</a></li>
-                                <li><a href="special.html">Special Recipe</a></li>
-                                <li><a href="404.html">404 page</a></li>
-                                <li><a href="comming-soon.html">Coming Soon page</a></li>
-                            </ul>
-                        </li>*@
                         <li><a href="/Contact">Liên hệ</a></li>
-                        
-                        <li class="dropdown submenu">
-                                                    <a class="dropdown-toggle" href="/About" role="button" aria-haspopup="true" aria-expanded="false">Về chúng tôi</a>
-                                                    @*<ul class="dropdown-menu">
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="our-team.html">Our Chefs</a></li>
-                                                    <li><a href="testimonials.html">Testimonials</a></li>
-                                                    </ul>*@
-                                                </li>
-                        @*<li class="dropdown submenu">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.html">Main shop</a></li>
-                                <li><a href="product-details.html">Product Details</a></li>
-                                <li><a href="cart.html">Cart Page</a></li>
-                                <li><a href="checkout.html">Checkout Page</a></li>
-                            </ul>
-                        </li>*@
+                        <li class="dropdown submenu"><a class="dropdown-toggle" href="/About" role="button" aria-haspopup="true" aria-expanded="false">Về chúng tôi</a></li>
                         <li class="dropdown submenu">
                             @if (@username != null)
                             {
@@ -134,11 +90,7 @@
                             {
                                 <a class="dropdown-toggle" href="/Login" role="button" aria-haspopup="true" aria-expanded="false">Đăng nhập</a>
                             }
-                            @*<ul class="dropdown-menu">
-                            <li><a href="blog.html">Blog with sidebar</a></li>
-                            <li><a href="blog-2column.html">Blog 2 column</a></li>
-                            <li><a href="single-blog.html">Blog details</a></li>
-                            </ul>*@
+                            
                         </li>
                     </ul>
                 </div>
@@ -160,7 +112,7 @@
                     <div class="col-lg-3 col-6">
                         <aside class="f_widget f_about_widget">
                             <img src="img/footer-logo.png" alt="">
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui bland itiis praesentium voluptatum deleniti atque corrupti.</p>
+                            <p>Chúng tôi cam kết mang đến cho bạn những sản phẩm tốt nhất, uy tín nhất và dịch vụ chăm sóc khách hàng tận tâm nhất.</p>
                             <ul class="nav">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -172,35 +124,35 @@
                     <div class="col-lg-3 col-6">
                         <aside class="f_widget f_link_widget">
                             <div class="f_title">
-                                <h3>Quick links</h3>
+                                <h3>Liên kết nhanh</h3>
                             </div>
                             <ul class="list_style">
-                                <li><a href="#">Your Account</a></li>
-                                <li><a href="#">View Order</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditionis</a></li>
+                                <li><a href="#">Tài khoản của bạn</a></li>
+                                <li><a href="#">Xem đơn hàng</a></li>
+                                <li><a href="#">Chính sách bảo mật</a></li>
+                                <li><a href="#">Điều khoản và điều kiện</a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="col-lg-3 col-6">
                         <aside class="f_widget f_link_widget">
                             <div class="f_title">
-                                <h3>Work Times</h3>
+                                <h3>Giờ làm việc</h3>
                             </div>
                             <ul class="list_style">
-                                <li><a href="#">Mon. :  Fri.: 8 am - 8 pm</a></li>
-                                <li><a href="#">Sat. : 9am - 4pm</a></li>
-                                <li><a href="#">Sun. : Closed</a></li>
+                                <li><a href="#">Thứ Hai - Thứ Sáu: 8 giờ sáng - 8 giờ tối</a></li>
+                                <li><a href="#">Thứ Bảy: 9 giờ sáng - 4 giờ chiều</a></li>
+                                <li><a href="#">Chủ Nhật: Đóng cửa</a></li>
                             </ul>
                         </aside>
                     </div>
                     <div class="col-lg-3 col-6">
                         <aside class="f_widget f_contact_widget">
                             <div class="f_title">
-                                <h3>Contact Info</h3>
+                                <h3>Thông tin liên hệ</h3>
                             </div>
                             <h4>(1800) 574 9687</h4>
-                            <p>Justshiop Store <br />256, baker Street,, New Youk, 5245</p>
+                            <p>Cửa hàng Justshiop <br />256, Phố Baker, New York, 5245</p>
                             <h5>cakebakery@contact.co.in</h5>
                         </aside>
                     </div>
@@ -214,12 +166,13 @@
                         <h5><a target="_blank" href="https://www.templatespoint.net">Templates Point</a></h5>
                     </div>
                     <div class="float-right">
-                        <a href="#">Purchase Now</a>
+                        <a href="#">Mua Ngay</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <!--================End Footer Area =================-->
     <!--================Search Box Area =================-->
     <div class="search_area zoom-anim-dialog mfp-hide" id="test-search">
