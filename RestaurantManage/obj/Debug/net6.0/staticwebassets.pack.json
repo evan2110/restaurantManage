@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\RestaurantManage.bundle.scp.css"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\bootstrap-icons.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-icons.css"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.css"
     },
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\boxicons.min.css",
+      "PackagePath": "staticwebassets\\css\\boxicons.min.css"
     },
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\font-awesome.min.css",
@@ -37,6 +45,18 @@
       "PackagePath": "staticwebassets\\css\\picto-foundry-food.css"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\quill.bubble.css",
+      "PackagePath": "staticwebassets\\css\\quill.bubble.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\quill.snow.css",
+      "PackagePath": "staticwebassets\\css\\quill.snow.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\remixicon.css",
+      "PackagePath": "staticwebassets\\css\\remixicon.css"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\responsive.css",
       "PackagePath": "staticwebassets\\css\\responsive.css"
     },
@@ -51,6 +71,14 @@
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\style2.css",
+      "PackagePath": "staticwebassets\\css\\style2.css"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\css\\style3.css",
+      "PackagePath": "staticwebassets\\css\\style3.css"
     },
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\favicon-1.ico",
@@ -253,6 +281,10 @@
       "PackagePath": "staticwebassets\\images\\steak.jpg"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\img\\apple-touch-icon.png"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\banner\\banner-bg.jpg",
       "PackagePath": "staticwebassets\\img\\banner\\banner-bg.jpg"
     },
@@ -431,6 +463,10 @@
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\fav-icon.png",
       "PackagePath": "staticwebassets\\img\\fav-icon.png"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
     },
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\footer-logo.png",

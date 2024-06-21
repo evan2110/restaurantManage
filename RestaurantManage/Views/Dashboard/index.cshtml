@@ -1,403 +1,495 @@
-﻿
+﻿@using RestaurantManage.DTOs
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @{
     Layout = null;
-    string Mode = ViewBag.Mode;
+    string mode = ViewBag.mode;
+    double totalReveneu = 0;
+    int totalFoods = 0;
+    int totalCust = 0;
+    List<RateReveneuDTO> reveneuDtos = new List<RateReveneuDTO>();
+    List<TopFoodDTO> topFoods = new List<TopFoodDTO>();
+    if (mode == "Dashboard")
+    {
+         totalReveneu = ViewBag.totalReveneu;
+         totalFoods= ViewBag.totalFoods;
+         totalCust = ViewBag.totalCust;
+         reveneuDtos = ViewBag.reveneuDtos as List<RateReveneuDTO>;
+         topFoods = ViewBag.topFoods as List<TopFoodDTO>;
+    }
 }
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width,
-                   initial-scale=1.0">
-    <title>ShopWeb</title>
-    <link rel="stylesheet"
-          href="style.css">
-    <link rel="stylesheet"
-          href="~/css/admin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Quản Lý Doanh Thu Bán Hàng</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
-    <!-- for header part -->
-    <header>
-
-        <a href="/Home">
-        <div class="logosec">
-            <div class="logo">ShopWeb</div>
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-                 class="icn menuicn"
-                 id="menuicn"
-                 alt="menu-icon">
+    <div class="sidebar" id="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/Dashboard">Thống kê</a></li>
+                <li><a href="/Dashboard?Mode=ManageAcc">Tài khoản</a></li>
+                <li><a href="#">Bàn ăn</a></li>
+                <li><a href="#">Danh mục</a></li>
+                <li><a href="#">Hóa đơn</a></li>
+                <li style="margin-top: 200%;"><a href="#">Đăng xuất</a></li>
+            </ul>
         </div>
-        </a>
-
-        <div class="searchbar">
-            <input type="text"
-                   id="searchInput"
-                   placeholder="Search"
-                   name="search">
-            <div class="searchbtn">
-                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                     class="icn srchicn"
-                     alt="search-icon"
-                     id="searchIcon">
+<div class="main-content" id="main-content">
+    @if (mode == "Dashboard")
+    {
+        <header>
+                <h1>Dashboard Quản Lý Nhà Hàng</h1>
+            </header>
+            <main>
+                <section class="stats">
+                    <div class="stat">
+                        <h3>Tổng Doanh Thu</h3>
+                        <p id="total-revenue">0</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Số Món Ăn Bán Được</h3>
+                        <p id="total-products">0</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Tổng Khách Hàng</h3>
+                        <p id="new-customers">0</p>
+                    </div>
+                </section>
+                <section class="charts">
+                    <canvas id="revenue-chart"></canvas>
+                </section>
+                <section class="table">
+                    <h2>Top 3 Món Ăn Bán Chạy</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Tên Món Ăn</th>
+                            <th>Số Lượng Bán</th>
+                            <th>Doanh Thu</th>
+                        </tr>
+                        </thead>
+                        <tbody id="product-table-body">
+                        <!-- Dữ liệu sẽ được thêm vào bằng JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+    }else if (mode == "ManageAcc")
+    {
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                    </div>
+                </div>
             </div>
-        </div>
-
-
-        <div class="message">
-            <div class="circle"></div>
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-                 class="icn"
-                 alt="">
-            <div class="dp">
-                <a href="/UserDetail?user_id=">
-                    <img src=""
-                         class="dpicn"
-                         alt="dp">
-                </a>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>						
+                        <th>Date Created</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar" alt="Avatar"> Michael Holz</a></td>
+                        <td>04/10/2013</td>                        
+                        <td>Admin</td>
+                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="#"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Wilson</a></td>
+                        <td>05/08/2014</td>                       
+                        <td>Publisher</td>
+                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="#"><img src="/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno</a></td>
+                        <td>11/05/2015</td>
+                        <td>Publisher</td>
+                        <td><span class="status text-danger">&bull;</span> Suspended</td>                        
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><a href="#"><img src="/examples/images/avatar/4.jpg" class="avatar" alt="Avatar"> Mary Saveley</a></td>
+                        <td>06/09/2016</td>
+                        <td>Reviewer</td>
+                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="#"><img src="/examples/images/avatar/5.jpg" class="avatar" alt="Avatar"> Martin Sommer</a></td>
+                        <td>12/08/2017</td>                        
+                        <td>Moderator</td>
+                        <td><span class="status text-warning">&bull;</span> Inactive</td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
             </div>
-        </div>
-
-    </header>
-
-    <div class="main-container">
-        <div class="navcontainer">
-            <nav class="nav">
-                <div class="nav-upper-options">
-                    <a href="/Dashboard">
-                        <div class="nav-option option1">
-                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-                                 class="nav-img"
-                                 alt="dashboard">
-                            <h3> Dashboard</h3>
-                        </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=User">
-                        <div class="option2 nav-option">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
-                                 class="nav-img"
-                                 alt="articles">
-                            <h3> Users</h3>
-                        </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Category">
-                        <div class="nav-option option3">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2603/2603910.png"
-                                 class="nav-img"
-                                 alt="report">
-                            <h3> Categories</h3>
-                        </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Product">
-                        <div class="nav-option option4">
-                            <img src="https://cdn-icons-png.flaticon.com/512/962/962863.png"
-                                 class="nav-img"
-                                 alt="institution">
-                            <h3> Products</h3>
-                        </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Blog">
-                        <div class="nav-option option5">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4922/4922073.png"
-                                 class="nav-img"
-                                 alt="blog">
-                            <h3> Blogs</h3>
-                        </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Color">
-                    <div class="nav-option option6">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4702/4702882.png"
-                             class="nav-img"
-                             alt="settings">
-                        <h3> Colors</h3>
-                    </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Size">
-                    <div class="nav-option option6">
-                        <img src="https://cdn-icons-png.flaticon.com/512/93/93640.png"
-                             class="nav-img"
-                             alt="settings">
-                        <h3> Sizes</h3>
-                    </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Order">
-                    <div class="nav-option option6">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3496/3496155.png"
-                             class="nav-img"
-                             alt="settings">
-                        <h3> Orders</h3>
-                    </div>
-                    </a>
-
-                    <a href="@Url.Action("Logout", "Login")">
-                        <div class="nav-option logout">
-                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-                                 class="nav-img"
-                                 alt="logout">
-                            <h3>Logout</h3>
-                        </div>
-                    </a>
-
-                </div>
-            </nav>
-        </div>
-        <div class="main">
-            @if (Mode == "Dashboard")
-            {
-                <div class="searchbar2">
-                    <input type="text"
-                           name=""
-                           id=""
-                           placeholder="Search">
-                    <div class="searchbtn">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                             class="icn srchicn"
-                             alt="search-button">
-                    </div>
-                </div>
-
-                <div class="box-container" style="margin-bottom:60px;">
-
-                    <a href="/Dashboard?Mode=User">
-                    <div class="box box1">
-                        <div class="text">
-                            <h2 class="topic-heading">@ViewBag.totalUsers</h2>
-                            <h2 class="topic">Users</h2>
-                        </div>
-
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-                             alt="Views">
-                    </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Product">
-                    <div class="box box2">
-                        <div class="text">
-                            <h2 class="topic-heading">@ViewBag.totalProducts</h2>
-                            <h2 class="topic">Products</h2>
-                        </div>
-
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
-                             alt="likes">
-                    </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Blog">
-                    <div class="box box3">
-                        <div class="text">
-                            <h2 class="topic-heading">@ViewBag.totalBlogs</h2>
-                            <h2 class="topic">Blogs</h2>
-                        </div>
-
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-                             alt="comments">
-                    </div>
-                    </a>
-
-                    <a href="/Dashboard?Mode=Order">
-                    <div class="box box4">
-                        <div class="text">
-                            <h2 class="topic-heading">@ViewBag.totalOrders</h2>
-                            <h2 class="topic">Orders</h2>
-                        </div>
-
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
-                    </div>
-                    </a>
-                </div>
-                <div style="display:flex; justify-content:space-between;">
-                    <div id="chartContainer1" style="height: 500px; width: 45%;"></div>
-                    <div id="chartContainer2" style="height: 500px; width: 45%;"></div>
-                </div>
-                <style>
-                    .main {
-                        background-color: white;
-                    }
-                </style>
-
-            }
         </div>
     </div>
-
-    <script>
-        let menuicn = document.querySelector(".menuicn");
-        let nav = document.querySelector(".navcontainer");
-        const numberProductsEachCategory = @Html.Raw(Json.Serialize(ViewBag.NumberProductsEachCategory));
-        var dataPoints = [];
-        for (var key in numberProductsEachCategory) {
-            dataPoints.push({
-                y: numberProductsEachCategory[key],
-                label: key
-            });
-        }
-
-        const topProductSelled = @Html.Raw(Json.Serialize(ViewBag.topProductSelled));
-        var dataPoints2 = [];
-        for (var key in topProductSelled) {
-            dataPoints2.push({
-                y: topProductSelled[key],
-                label: key
-            });
-        }
-
-
-        menuicn.addEventListener("click", () => {
-            nav.classList.toggle("navclose");
-        })
-
-        window.onload = function () {
-            var chart1 = new CanvasJS.Chart("chartContainer1", {
-                theme: "light1",
-                exportEnabled: true,
-                animationEnabled: true,
-                title: {
-                    text: "Total Product Currently Available"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 25,
-                    toolTipContent: "<b>{label}</b>: {y}%",
-                    showInLegend: "true",
-                    legendText: "{label}",
-                    indexLabelFontSize: 16,
-                    indexLabel: "{label} - {y}%",
-                    dataPoints: dataPoints
-                }]
-            });
-            chart1.render();
-
-            var chart2 = new CanvasJS.Chart("chartContainer2", {
-                theme: "light1", // "light1", "light2", "dark1"
-                animationEnabled: true,
-                exportEnabled: true,
-                title: {
-                    text: "Top 6 Most Selled Products"
-                },
-                axisX: {
-                    margin: 10,
-                    labelPlacement: "inside",
-                    tickPlacement: "inside"
-                },
-                axisY2: {
-                    title: "Views (in usd)",
-                    titleFontSize: 14,
-                    includeZero: true,
-                    suffix: "usd"
-                },
-                data: [{
-                    type: "bar",
-                    axisYType: "secondary",
-                    yValueFormatString: "#,###.##usd",
-                    indexLabel: "{y}",
-                    dataPoints: dataPoints2
-                }]
-            });
-            chart2.render();
-        }
-
-        function redirectToAdmin(mode, button) {
-            if (button !== null) {
-                if (mode === "DeleteUser" || mode == "DeleteProduct" || mode == "DeleteCategory" || mode == "DeleteBlog" || mode == "DeleteColor"   || mode == "DeleteSize"  || mode == "DeleteOrder") {
-                    // Lấy các phần tử DOM
-                    var modal = document.getElementById("myModal");
-                    var yesBtn = document.getElementById("yesBtn");
-                    var noBtn = document.getElementById("noBtn");
-
-                    modal.style.display = "flex";
-
-                    // Xử lý khi người dùng chọn "Yes"
-                    yesBtn.onclick = function () {
-                        modal.style.display = "none";
-                        id = button.getAttribute("data");
-                        window.location.href = "/Dashboard?Mode=" + mode + "&id=" + id;
-                    };
-
-                    // Xử lý khi người dùng chọn "No"
-                    noBtn.onclick = function () {
-                        modal.style.display = "none";
-                    };
-                }else{
-                id = button.getAttribute("data");
-                window.location.href = "/Dashboard?Mode=" + mode + "&id=" + id;
-                }
-            } else {
-                window.location.href = "/Dashboard?Mode=" + mode;
-            }
-        }
-
-        function goBack() {
-            history.back();
-        }
-
-        const searchInput = document.getElementById('searchInput');
-        const searchIcon = document.getElementById('searchIcon');
-
-        searchIcon.addEventListener('click', () => {
-            const searchTerm = searchInput.value;
-            const newUrl = `http://localhost:5251/Dashboard?Mode=${encodeURIComponent(searchTerm)}`;
-            window.location.href = newUrl;
-        });
-
-    </script>
-    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-    <style>
-        /* CSS cho các nút hành động */
-        .action-button {
-            border: none;
-            padding: 8px 12px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        /* CSS cho nút "Edit" */
-        .edit-button {
-            background-color: #3498db;
-            color: white;
-            margin-right: 5px;
-        }
-
-        /* CSS cho nút "Delete" */
-        .delete-button {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        .modal {
-            position: fixed;
-            z-index: 9999; /* Đảm bảo hộp thoại hiển thị phía trên tất cả các phần tử khác */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
-            display: flex;
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
-
-        .modal-content {
-            background-color: #fff;
-            border-radius: 5px;
-            text-align: center;
-            padding: 50px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Đổ bóng */
-        }
-
-    </style>
-
+    }
+</div>
+    <script src="script.js"></script>
 </body>
 </html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        display: flex;
+    }
+    
+    .sidebar {
+        width: 250px;
+        background-color: #333;
+        color: white;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 2em;
+    }
+    
+    .sidebar h2 {
+        text-align: center;
+    }
+    
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .sidebar ul li {
+        padding: 1em;
+        text-align: center;
+    }
+    
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .main-content {
+        margin-left: 250px;
+        padding: 1em;
+        width: calc(100% - 250px);
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 1em;
+        text-align: center;
+    }
+    
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        margin: 2em 0;
+    }
+    
+    .stat {
+        background-color: #fff;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 30%;
+    }
+    
+    .stat h3 {
+        margin-bottom: 0.5em;
+    }
+    
+    .charts {
+        margin: 2em 0;
+    }
+    
+    .table {
+        margin: 2em 0;
+        background-color: #fff;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 0.5em;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .table-responsive {
+        margin: 30px 0;
+    }
+    .table-wrapper {
+        min-width: 1000px;
+        background: #fff;
+        padding: 20px 25px;
+        border-radius: 3px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table-title {
+        padding-bottom: 15px;
+        background: #299be4;
+        color: #fff;
+        padding: 16px 30px;
+        margin: -20px -25px 10px;
+        border-radius: 3px 3px 0 0;
+    }
+    .table-title h2 {
+        margin: 5px 0 0;
+        font-size: 24px;
+    }
+    .table-title .btn {
+        color: #566787;
+        float: right;
+        font-size: 13px;
+        background: #fff;
+        border: none;
+        min-width: 50px;
+        border-radius: 2px;
+        border: none;
+        outline: none !important;
+        margin-left: 10px;
+    }
+    .table-title .btn:hover, .table-title .btn:focus {
+        color: #566787;
+        background: #f2f2f2;
+    }
+    .table-title .btn i {
+        float: left;
+        font-size: 21px;
+        margin-right: 5px;
+    }
+    .table-title .btn span {
+        float: left;
+        margin-top: 2px;
+    }
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+        padding: 12px 15px;
+        vertical-align: middle;
+    }
+    table.table tr th:first-child {
+        width: 60px;
+    }
+    table.table tr th:last-child {
+        width: 100px;
+    }
+    table.table-striped tbody tr:nth-of-type(odd) {
+        background-color: #fcfcfc;
+    }
+    table.table-striped.table-hover tbody tr:hover {
+        background: #f5f5f5;
+    }
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }	
+    table.table td:last-child i {
+        opacity: 0.9;
+        font-size: 22px;
+        margin: 0 5px;
+    }
+    table.table td a {
+        font-weight: bold;
+        color: #566787;
+        display: inline-block;
+        text-decoration: none;
+    }
+    table.table td a:hover {
+        color: #2196F3;
+    }
+    table.table td a.settings {
+        color: #2196F3;
+    }
+    table.table td a.delete {
+        color: #F44336;
+    }
+    table.table td i {
+        font-size: 19px;
+    }
+    table.table .avatar {
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .status {
+        font-size: 30px;
+        margin: 2px 2px 0 0;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 10px;
+    }
+    .text-success {
+        color: #10c469;
+    }
+    .text-info {
+        color: #62c9e8;
+    }
+    .text-warning {
+        color: #FFC107;
+    }
+    .text-danger {
+        color: #ff5b5b;
+    }
+    .pagination {
+        float: right;
+        margin: 0 0 5px;
+    }
+    .pagination li a {
+        border: none;
+        font-size: 13px;
+        min-width: 30px;
+        min-height: 30px;
+        color: #999;
+        margin: 0 2px;
+        line-height: 30px;
+        border-radius: 2px !important;
+        text-align: center;
+        padding: 0 6px;
+    }
+    .pagination li a:hover {
+        color: #666;
+    }	
+    .pagination li.active a, .pagination li.active a.page-link {
+        background: #03A9F4;
+    }
+    .pagination li.active a:hover {        
+        background: #0397d6;
+    }
+    .pagination li.disabled i {
+        color: #ccc;
+    }
+    .pagination li i {
+        font-size: 16px;
+        padding-top: 6px
+    }
+    .hint-text {
+        float: left;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+</style>
+<script>
+// Dữ liệu mẫu
+const data = {
+    totalRevenue: @totalReveneu,
+    totalProducts: @totalFoods,
+    newCustomers: @totalCust,
+    monthlyRevenue: @Html.Raw(Json.Serialize(reveneuDtos.Select(r => r.Reveneu))),
+    bestSellingProducts: [
+            @foreach(var item in topFoods) {
+                @:{ name: "@item.FoodName", quantity: @item.Quantity, revenue: @item.Reveneu },
+            }
+        ]
+};
+
+// Cập nhật các thẻ thống kê
+document.getElementById('total-revenue').textContent = `${data.totalRevenue.toLocaleString()} VND`;
+document.getElementById('total-products').textContent = data.totalProducts;
+document.getElementById('new-customers').textContent = data.newCustomers;
+
+// Tạo biểu đồ doanh thu theo tháng
+const ctx = document.getElementById('revenue-chart').getContext('2d');
+const revenueChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+        datasets: [{
+            label: 'Doanh thu',
+            data: data.monthlyRevenue,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+// Hiển thị các sản phẩm bán chạy
+const productTableBody = document.getElementById('product-table-body');
+data.bestSellingProducts.forEach(product => {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${product.name}</td><td>${product.quantity}</td><td>${product.revenue.toLocaleString()} VND</td>`;
+    productTableBody.appendChild(row);
+});
+
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+});
+
+</script>

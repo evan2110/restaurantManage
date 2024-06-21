@@ -15,7 +15,8 @@ public class AuthorizeMiddleware
         string role = context.Session.GetString("Role");
         if (role != "Admin")
         {
-            context.Response.Redirect("/Login");
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsync("Forbidden: You do not have access to this resource.");
             return;
         }
         
