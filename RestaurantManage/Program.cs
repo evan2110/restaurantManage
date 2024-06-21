@@ -55,6 +55,20 @@ namespace RestaurantManage
                         pattern: "{controller=Home}/{action=Index}/{id?}");
                 });
             });
+            
+            // Đăng ký AuthorizeMiddleware cho URL /Dashboard
+            app.Map("/Dashboard", appBuilder =>
+            {
+                appBuilder.UseMiddleware<AuthorizeMiddleware>();
+                appBuilder.UseRouting();
+                appBuilder.UseAuthorization();
+                appBuilder.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "dashboard",
+                        pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+                });
+            });
 
             app.UseEndpoints(endpoints =>
             {

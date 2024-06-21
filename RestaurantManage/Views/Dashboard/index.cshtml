@@ -1,0 +1,403 @@
+﻿
+@{
+    Layout = null;
+    string Mode = ViewBag.Mode;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>ShopWeb</title>
+    <link rel="stylesheet"
+          href="style.css">
+    <link rel="stylesheet"
+          href="~/css/admin.css">
+</head>
+
+<body>
+
+    <!-- for header part -->
+    <header>
+
+        <a href="/Home">
+        <div class="logosec">
+            <div class="logo">ShopWeb</div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                 class="icn menuicn"
+                 id="menuicn"
+                 alt="menu-icon">
+        </div>
+        </a>
+
+        <div class="searchbar">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search"
+                   name="search">
+            <div class="searchbtn">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+                     class="icn srchicn"
+                     alt="search-icon"
+                     id="searchIcon">
+            </div>
+        </div>
+
+
+        <div class="message">
+            <div class="circle"></div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+                 class="icn"
+                 alt="">
+            <div class="dp">
+                <a href="/UserDetail?user_id=">
+                    <img src=""
+                         class="dpicn"
+                         alt="dp">
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <a href="/Dashboard">
+                        <div class="nav-option option1">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+                                 class="nav-img"
+                                 alt="dashboard">
+                            <h3> Dashboard</h3>
+                        </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=User">
+                        <div class="option2 nav-option">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+                                 class="nav-img"
+                                 alt="articles">
+                            <h3> Users</h3>
+                        </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Category">
+                        <div class="nav-option option3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2603/2603910.png"
+                                 class="nav-img"
+                                 alt="report">
+                            <h3> Categories</h3>
+                        </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Product">
+                        <div class="nav-option option4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/962/962863.png"
+                                 class="nav-img"
+                                 alt="institution">
+                            <h3> Products</h3>
+                        </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Blog">
+                        <div class="nav-option option5">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4922/4922073.png"
+                                 class="nav-img"
+                                 alt="blog">
+                            <h3> Blogs</h3>
+                        </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Color">
+                    <div class="nav-option option6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4702/4702882.png"
+                             class="nav-img"
+                             alt="settings">
+                        <h3> Colors</h3>
+                    </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Size">
+                    <div class="nav-option option6">
+                        <img src="https://cdn-icons-png.flaticon.com/512/93/93640.png"
+                             class="nav-img"
+                             alt="settings">
+                        <h3> Sizes</h3>
+                    </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Order">
+                    <div class="nav-option option6">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3496/3496155.png"
+                             class="nav-img"
+                             alt="settings">
+                        <h3> Orders</h3>
+                    </div>
+                    </a>
+
+                    <a href="@Url.Action("Logout", "Login")">
+                        <div class="nav-option logout">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+                                 class="nav-img"
+                                 alt="logout">
+                            <h3>Logout</h3>
+                        </div>
+                    </a>
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            @if (Mode == "Dashboard")
+            {
+                <div class="searchbar2">
+                    <input type="text"
+                           name=""
+                           id=""
+                           placeholder="Search">
+                    <div class="searchbtn">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+                             class="icn srchicn"
+                             alt="search-button">
+                    </div>
+                </div>
+
+                <div class="box-container" style="margin-bottom:60px;">
+
+                    <a href="/Dashboard?Mode=User">
+                    <div class="box box1">
+                        <div class="text">
+                            <h2 class="topic-heading">@ViewBag.totalUsers</h2>
+                            <h2 class="topic">Users</h2>
+                        </div>
+
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+                             alt="Views">
+                    </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Product">
+                    <div class="box box2">
+                        <div class="text">
+                            <h2 class="topic-heading">@ViewBag.totalProducts</h2>
+                            <h2 class="topic">Products</h2>
+                        </div>
+
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
+                             alt="likes">
+                    </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Blog">
+                    <div class="box box3">
+                        <div class="text">
+                            <h2 class="topic-heading">@ViewBag.totalBlogs</h2>
+                            <h2 class="topic">Blogs</h2>
+                        </div>
+
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+                             alt="comments">
+                    </div>
+                    </a>
+
+                    <a href="/Dashboard?Mode=Order">
+                    <div class="box box4">
+                        <div class="text">
+                            <h2 class="topic-heading">@ViewBag.totalOrders</h2>
+                            <h2 class="topic">Orders</h2>
+                        </div>
+
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
+                    </div>
+                    </a>
+                </div>
+                <div style="display:flex; justify-content:space-between;">
+                    <div id="chartContainer1" style="height: 500px; width: 45%;"></div>
+                    <div id="chartContainer2" style="height: 500px; width: 45%;"></div>
+                </div>
+                <style>
+                    .main {
+                        background-color: white;
+                    }
+                </style>
+
+            }
+        </div>
+    </div>
+
+    <script>
+        let menuicn = document.querySelector(".menuicn");
+        let nav = document.querySelector(".navcontainer");
+        const numberProductsEachCategory = @Html.Raw(Json.Serialize(ViewBag.NumberProductsEachCategory));
+        var dataPoints = [];
+        for (var key in numberProductsEachCategory) {
+            dataPoints.push({
+                y: numberProductsEachCategory[key],
+                label: key
+            });
+        }
+
+        const topProductSelled = @Html.Raw(Json.Serialize(ViewBag.topProductSelled));
+        var dataPoints2 = [];
+        for (var key in topProductSelled) {
+            dataPoints2.push({
+                y: topProductSelled[key],
+                label: key
+            });
+        }
+
+
+        menuicn.addEventListener("click", () => {
+            nav.classList.toggle("navclose");
+        })
+
+        window.onload = function () {
+            var chart1 = new CanvasJS.Chart("chartContainer1", {
+                theme: "light1",
+                exportEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "Total Product Currently Available"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 25,
+                    toolTipContent: "<b>{label}</b>: {y}%",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{label} - {y}%",
+                    dataPoints: dataPoints
+                }]
+            });
+            chart1.render();
+
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+                theme: "light1", // "light1", "light2", "dark1"
+                animationEnabled: true,
+                exportEnabled: true,
+                title: {
+                    text: "Top 6 Most Selled Products"
+                },
+                axisX: {
+                    margin: 10,
+                    labelPlacement: "inside",
+                    tickPlacement: "inside"
+                },
+                axisY2: {
+                    title: "Views (in usd)",
+                    titleFontSize: 14,
+                    includeZero: true,
+                    suffix: "usd"
+                },
+                data: [{
+                    type: "bar",
+                    axisYType: "secondary",
+                    yValueFormatString: "#,###.##usd",
+                    indexLabel: "{y}",
+                    dataPoints: dataPoints2
+                }]
+            });
+            chart2.render();
+        }
+
+        function redirectToAdmin(mode, button) {
+            if (button !== null) {
+                if (mode === "DeleteUser" || mode == "DeleteProduct" || mode == "DeleteCategory" || mode == "DeleteBlog" || mode == "DeleteColor"   || mode == "DeleteSize"  || mode == "DeleteOrder") {
+                    // Lấy các phần tử DOM
+                    var modal = document.getElementById("myModal");
+                    var yesBtn = document.getElementById("yesBtn");
+                    var noBtn = document.getElementById("noBtn");
+
+                    modal.style.display = "flex";
+
+                    // Xử lý khi người dùng chọn "Yes"
+                    yesBtn.onclick = function () {
+                        modal.style.display = "none";
+                        id = button.getAttribute("data");
+                        window.location.href = "/Dashboard?Mode=" + mode + "&id=" + id;
+                    };
+
+                    // Xử lý khi người dùng chọn "No"
+                    noBtn.onclick = function () {
+                        modal.style.display = "none";
+                    };
+                }else{
+                id = button.getAttribute("data");
+                window.location.href = "/Dashboard?Mode=" + mode + "&id=" + id;
+                }
+            } else {
+                window.location.href = "/Dashboard?Mode=" + mode;
+            }
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        const searchInput = document.getElementById('searchInput');
+        const searchIcon = document.getElementById('searchIcon');
+
+        searchIcon.addEventListener('click', () => {
+            const searchTerm = searchInput.value;
+            const newUrl = `http://localhost:5251/Dashboard?Mode=${encodeURIComponent(searchTerm)}`;
+            window.location.href = newUrl;
+        });
+
+    </script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <style>
+        /* CSS cho các nút hành động */
+        .action-button {
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* CSS cho nút "Edit" */
+        .edit-button {
+            background-color: #3498db;
+            color: white;
+            margin-right: 5px;
+        }
+
+        /* CSS cho nút "Delete" */
+        .delete-button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: 9999; /* Đảm bảo hộp thoại hiển thị phía trên tất cả các phần tử khác */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            padding: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Đổ bóng */
+        }
+
+    </style>
+
+</body>
+</html>
