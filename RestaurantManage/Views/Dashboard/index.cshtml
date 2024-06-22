@@ -8,6 +8,11 @@
     int totalCust = 0;
     List<RateReveneuDTO> reveneuDtos = new List<RateReveneuDTO>();
     List<TopFoodDTO> topFoods = new List<TopFoodDTO>();
+    List<Account> accounts = new List<Account>();
+    int countPage = 0;
+    int page = 0;
+    int count = 1;
+
     if (mode == "Dashboard")
     {
          totalReveneu = ViewBag.totalReveneu;
@@ -15,6 +20,11 @@
          totalCust = ViewBag.totalCust;
          reveneuDtos = ViewBag.reveneuDtos as List<RateReveneuDTO>;
          topFoods = ViewBag.topFoods as List<TopFoodDTO>;
+    }else if (mode == "ManageAcc")
+    {
+        accounts = ViewBag.accounts as List<Account>;
+        countPage = ViewBag.countPage;
+        page = ViewBag.page;
     }
 }
 <!DOCTYPE html>
@@ -92,11 +102,11 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>User <b>Management</b></h2>
+                        <h2>Account <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                        <a href="/Dashboard?Mode=Account" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Account</span></a>
+                        @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
                     </div>
                 </div>
             </div>
@@ -104,85 +114,120 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>						
-                        <th>Date Created</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>Tên đăng nhập</th>						
+                        <th>Tên hiển thị</th>
+                        <th>Mật khẩu</th>
+                        <th>Chức vụ</th>
+                        <th>Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach (var item in accounts)
+                {
                     <tr>
-                        <td>1</td>
-                        <td><a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar" alt="Avatar"> Michael Holz</a></td>
-                        <td>04/10/2013</td>                        
-                        <td>Admin</td>
-                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td>@count</td>
+                        <td><a href="#">@item.UserName</a></td>
+                        <td>@item.DisplayName</td>
+                        <td>******</td>
+                        <td>@(item.Type == 0 ? "Nhân viên" : "Quản lý")</td>
                         <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <a href="/Dashboard?mode=Account&username=@item.UserName" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="@Url.Action("Remove", "Dashboard", new { id = item.UserName })" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Are you sure you want to delete this account?');"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><a href="#"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Wilson</a></td>
-                        <td>05/08/2014</td>                       
-                        <td>Publisher</td>
-                        <td><span class="status text-success">&bull;</span> Active</td>
-                        <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><a href="#"><img src="/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno</a></td>
-                        <td>11/05/2015</td>
-                        <td>Publisher</td>
-                        <td><span class="status text-danger">&bull;</span> Suspended</td>                        
-                        <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                        </td>                        
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><a href="#"><img src="/examples/images/avatar/4.jpg" class="avatar" alt="Avatar"> Mary Saveley</a></td>
-                        <td>06/09/2016</td>
-                        <td>Reviewer</td>
-                        <td><span class="status text-success">&bull;</span> Active</td>
-                        <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td><a href="#"><img src="/examples/images/avatar/5.jpg" class="avatar" alt="Avatar"> Martin Sommer</a></td>
-                        <td>12/08/2017</td>                        
-                        <td>Moderator</td>
-                        <td><span class="status text-warning">&bull;</span> Inactive</td>
-                        <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                        </td>
-                    </tr>
+                    count++;
+                }
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                 <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page-1)" class="page-link">Trang trước</a></li>
+                    
+                    @for (int i = 1; i <= @countPage; i++)
+                    {
+                        <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@i" class="page-link">@i</a></li>
+                    }
+                    <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page+1)" class="page-link">Trang sau</a></li>
                 </ul>
             </div>
         </div>
     </div>
+    }else if (mode == "Account")
+    {
+        <form asp-action="AccountManage" asp-controller="Dashboard" method="post" class="form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Thông tin tài khoản</h4>
+                </div>
+                <input name="check" value="@(ViewBag.account != null ? "1" : "")" type="text" class="form-control" hidden>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tên đăng nhập</label>
+                        <div class="col-sm-10">
+                            <input name="userName" value="@(ViewBag.account != null ? ViewBag.account.UserName : "")" type="text" class="form-control" readonly="@(ViewBag.account != null ? true : false)" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tên hiển thị</label>
+                            <div class="col-sm-10">
+                                <input name="displayName" value="@(ViewBag.account != null ? ViewBag.account.DisplayName : "")" type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Mật khẩu</label>
+                            <div class="col-sm-10">
+                                <input name="password" value="@(ViewBag.account != null ? ViewBag.account.PassWord : "")" type="password" class="form-control" minlength="6" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Chức vụ</label>
+                            <div class="col-sm-10">
+                                <select name="accountType" class="form-control" required>
+                                    @if (ViewBag.account != null && ViewBag.account.Type == 0)
+                                    {
+                                        <option value="0" selected>Nhân viên</option>
+                                        <option value="1">Quản lý</option>
+                                    }
+                                    else if (ViewBag.account != null && ViewBag.account.Type == 1)
+                                    {
+                                        <option value="0">Nhân viên</option>
+                                        <option value="1" selected>Quản lý</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="0">Nhân viên</option>
+                                        <option value="1">Quản lý</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if (ViewBag.error != "")
+                {
+                    <div class="col-sm-10">
+                        <p style="color: red;">@ViewBag.error</p>
+                    </div>
+                }
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                @if (ViewBag.account != null)
+                                {
+                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                                }
+                                <button type="reset" class="btn btn-default">Hủy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
     }
 </div>
     <script src="script.js"></script>
@@ -331,7 +376,7 @@
     }
     table.table tr th, table.table tr td {
         border-color: #e9e9e9;
-        padding: 12px 15px;
+        padding: 12px 7px;
         vertical-align: middle;
     }
     table.table tr th:first-child {

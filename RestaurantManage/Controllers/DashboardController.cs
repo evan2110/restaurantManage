@@ -10,9 +10,9 @@ public class DashboardController : Controller
     private QuanLyNhaHangContext _context = new QuanLyNhaHangContext(); 
 
     // GET
-    public IActionResult Index(string? Mode)
+    public IActionResult Index(string? mode, int? page, string? username)
     {
-        if (Mode == "Dashboard" || Mode == null)
+        if (mode == "Dashboard" || mode == null)
         {
             double? totalReveneu;
             int? totalFoods;
@@ -49,10 +49,98 @@ public class DashboardController : Controller
             ViewBag.totalCust = totalCust;
             ViewBag.reveneuDtos = reveneuDtos;
             ViewBag.mode = "Dashboard";
-        }else if (Mode == "ManageAcc")
+        }else if (mode == "ManageAcc")
         {
+            page = page ?? 1;
+            List<Account> accounts = new List<Account>();
+            List<Account> totalAccount = new List<Account>();
+        
+            accounts = _context.Accounts.Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalAccount = _context.Accounts.ToList();
+            int countPage = (int)Math.Ceiling((double)totalAccount.Count / 5);
+            
+            ViewBag.page = page;
+            ViewBag.accounts = accounts;
+            ViewBag.countPage = countPage;
             ViewBag.mode = "ManageAcc";
+        }else if (mode == "Account")
+        {
+            if (username != null)
+            {
+                var account = _context.Accounts.SingleOrDefault(e => e.UserName == username);
+                ViewBag.account = account;
+            }
+            ViewBag.error = TempData["error"];
+            ViewBag.mode = "Account";
         }
         return View();
+    }
+    
+    [HttpPost]
+    public IActionResult AccountManage(AccountManageDTO accountManageDto)
+    {
+        string error = "";
+        if (accountManageDto.UserName == "" || string.IsNullOrEmpty(accountManageDto.UserName))
+        {
+            error = "Tên đăng nhập không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
+        }
+        
+        if (accountManageDto.PassWord == "" || string.IsNullOrEmpty(accountManageDto.PassWord))
+        {
+            error = "Mật khẩu không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
+        }
+        
+        if (accountManageDto.PassWord.Length < 6)
+        {
+            error = "Độ dài password không đủ kí tự"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
+        }
+        
+        if (accountManageDto.Check != null)
+        {
+            var account = _context.Accounts.SingleOrDefault(e => e.UserName == accountManageDto.UserName);
+            account.DisplayName = accountManageDto.DisplayName;
+            account.PassWord = accountManageDto.PassWord;
+            account.Type = accountManageDto.accountType;
+
+            _context.Update(account);
+            _context.SaveChanges();
+        }
+        else
+        {
+            if (_context.Accounts.ToList().SingleOrDefault(e => e.UserName == accountManageDto.UserName) != null)
+            {
+                error = "Tài khoản đã tồn tại"; 
+                TempData["error"] = error;
+                return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
+            }
+            
+            Account account = new Account()
+            {
+                UserName = accountManageDto.UserName, DisplayName = accountManageDto.DisplayName,
+                PassWord = accountManageDto.PassWord, Type = accountManageDto.accountType
+            };
+            
+            _context.Add(account);
+            _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index", "Dashboard", new { Mode = "ManageAcc" });
+    }
+    
+    [HttpGet]
+    public IActionResult Remove(string? id)
+    {
+        var account = _context.Accounts.SingleOrDefault(e => e.UserName == id);
+       
+        _context.Accounts.Remove(account);
+        _context.SaveChanges();
+        
+        return RedirectToAction("Index", "Dashboard", new { Mode = "ManageAcc" });
     }
 }
