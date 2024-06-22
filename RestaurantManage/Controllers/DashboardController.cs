@@ -10,7 +10,7 @@ public class DashboardController : Controller
     private QuanLyNhaHangContext _context = new QuanLyNhaHangContext(); 
 
     // GET
-    public IActionResult Index(string? mode, int? page, string? username, int? tableId, int? foodId)
+    public IActionResult Index(string? mode, int? page, string? username, int? tableId, int? foodId, int? categoryId)
     {
         if (mode == "Dashboard" || mode == null)
         {
@@ -122,6 +122,29 @@ public class DashboardController : Controller
             ViewBag.foodCategories = foodCategories;
             ViewBag.error = TempData["error"];
             ViewBag.mode = "Food";
+        }else if (mode == "ManageCategory")
+        {
+            page = page ?? 1;
+            List<FoodCategory> categories = new List<FoodCategory>();
+            List<FoodCategory> totalCategories = new List<FoodCategory>();
+        
+            categories = _context.FoodCategories.Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalCategories = _context.FoodCategories.ToList();
+            int countPage = (int)Math.Ceiling((double)totalCategories.Count / 5);
+
+            ViewBag.page = page;
+            ViewBag.categories = categories;
+            ViewBag.countPage = countPage;
+            ViewBag.mode = "ManageCategory";
+        }else if (mode == "Category")
+        {
+            if (categoryId != 0)
+            {
+                var category = _context.FoodCategories.SingleOrDefault(e => e.Id == categoryId);
+                ViewBag.category = category;
+            }
+            ViewBag.error = TempData["error"];
+            ViewBag.mode = "Category";
         }
         return View();
     }
@@ -267,6 +290,46 @@ public class DashboardController : Controller
         return RedirectToAction("Index", "Dashboard", new { Mode = "ManageFood" });
     }
     
+    [HttpPost]
+    public IActionResult CategoryManage(CategoryManageDTO categoryManageDto)
+    {
+        string error = "";
+        if (categoryManageDto.CategoryName.Trim() == "" || string.IsNullOrEmpty(categoryManageDto.CategoryName.Trim()))
+        {
+            error = "Tên danh mục không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index", "Dashboard", new { Mode = "Category" });
+        }
+        
+        if (categoryManageDto.CategoryId != 0)
+        {
+            var category = _context.FoodCategories.SingleOrDefault(e => e.Id == categoryManageDto.CategoryId);
+            category.Name = categoryManageDto.CategoryName.Trim();
+
+            _context.Update(category);
+            _context.SaveChanges();
+        }
+        else
+        {
+            if (_context.FoodCategories.ToList().SingleOrDefault(e => e.Name.ToLower().Trim() == categoryManageDto.CategoryName.ToLower().Trim()) != null)
+            {
+                error = "Tên danh mục đã tồn tại"; 
+                TempData["error"] = error;
+                return RedirectToAction("Index", "Dashboard", new { Mode = "Category" });
+            }
+            
+            FoodCategory category = new FoodCategory()
+            {
+                Name = categoryManageDto.CategoryName.Trim()
+            };
+            
+            _context.Add(category);
+            _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index", "Dashboard", new { Mode = "ManageCategory" });
+    }
+    
     [HttpGet]
     public IActionResult Remove(string? id, string? mode)
     {
@@ -303,6 +366,22 @@ public class DashboardController : Controller
             _context.Foods.Remove(food);
             _context.SaveChanges();
             return RedirectToAction("Index", "Dashboard", new { Mode = "ManageFood" });
+        }else if (mode == "category")
+        {
+            var category = _context.FoodCategories.Include(e => e.Foods).ThenInclude(e => e.BillInfos).SingleOrDefault(e => e.Id == int.Parse(id));
+
+            foreach (var item in category.Foods)
+            {
+                _context.BillInfos.RemoveRange(item.BillInfos);
+                _context.SaveChanges();
+            }
+            
+            _context.Foods.RemoveRange(category.Foods);
+            _context.SaveChanges();
+            
+            _context.FoodCategories.Remove(category);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Dashboard", new { Mode = "ManageCategory" });
         }
         return null;
     }
