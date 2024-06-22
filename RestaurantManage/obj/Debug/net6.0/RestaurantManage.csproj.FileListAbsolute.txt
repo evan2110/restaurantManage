@@ -92,3 +92,9 @@ D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\runtimes\win\lib\n
 D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\C Sharp\restaurantManage\RestaurantManage\obj\Debug\net6.0\RestaurantManage.csproj.CopyComplete
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\EPPlus.dll
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\EPPlus.Interfaces.dll
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\C Sharp\restaurantManage\RestaurantManage\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll

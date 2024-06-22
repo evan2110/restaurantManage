@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using RestaurantManage.DTOs;
 using RestaurantManage.Models;
+using OfficeOpenXml; // You may need to install the EPPlus package via NuGet
+using System.IO;
 
 namespace RestaurantManage.Controllers;
 
@@ -488,5 +490,32 @@ public class DashboardController : Controller
             return RedirectToAction("Index", "Dashboard", new { Mode = "ManageBill" });
         }
         return null;
+    }
+    
+    [HttpGet]
+    public IActionResult ExportToExcel()
+    {
+        var bills = _context.Bills.ToList();
+        
+        using (var package = new ExcelPackage())
+        {
+            var worksheet = package.Workbook.Worksheets.Add("Bills");
+            worksheet.Cells["A1"].Value = "Bill ID";
+            worksheet.Cells["B1"].Value = "Date";
+            worksheet.Cells["C1"].Value = "Total Price";
+
+            for (int i = 0; i < bills.Count; i++)
+            {
+                worksheet.Cells[i + 2, 1].Value = bills[i].Id;
+                worksheet.Cells[i + 2, 2].Value = bills[i].DateCheckOut?.ToString("yyyy-MM-dd");
+                worksheet.Cells[i + 2, 3].Value = bills[i].TotalPrice;
+            }
+
+            var stream = new MemoryStream();
+            package.SaveAs(stream);
+            var content = stream.ToArray();
+
+            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Bills.xlsx");
+        }
     }
 }

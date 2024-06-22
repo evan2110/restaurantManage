@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "RestaurantManage/1.0.0": {
         "dependencies": {
+          "EPPlus": "7.0.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "Microsoft.Extensions.Configuration": "7.0.0",
@@ -48,6 +49,43 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.10.3.0",
             "fileVersion": "1.1000.323.51804"
+          }
+        }
+      },
+      "EPPlus/7.0.0": {
+        "dependencies": {
+          "EPPlus.Interfaces": "6.1.1",
+          "EPPlus.System.Drawing": "6.1.1",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0",
+          "Microsoft.IO.RecyclableMemoryStream": "2.3.2",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Security.Cryptography.Pkcs": "6.0.3",
+          "System.Text.Encoding.CodePages": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/EPPlus.dll": {
+            "assemblyVersion": "7.0.0.3",
+            "fileVersion": "7.0.0.3"
+          }
+        }
+      },
+      "EPPlus.Interfaces/6.1.1": {
+        "runtime": {
+          "lib/net6.0/EPPlus.Interfaces.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
+          }
+        }
+      },
+      "EPPlus.System.Drawing/6.1.1": {
+        "dependencies": {
+          "EPPlus.Interfaces": "6.1.1",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/EPPlus.System.Drawing.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
           }
         }
       },
@@ -472,6 +510,14 @@
           }
         }
       },
+      "Microsoft.IO.RecyclableMemoryStream/2.3.2": {
+        "runtime": {
+          "lib/net5.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "assemblyVersion": "2.3.2.0",
+            "fileVersion": "2.3.2.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.SqlServer.Server/1.0.0": {
@@ -517,6 +563,7 @@
           }
         }
       },
+      "System.ComponentModel.Annotations/5.0.0": {},
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -565,7 +612,7 @@
           }
         }
       },
-      "System.Formats.Asn1/5.0.0": {},
+      "System.Formats.Asn1/6.0.0": {},
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
@@ -627,7 +674,26 @@
       "System.Security.AccessControl/6.0.0": {},
       "System.Security.Cryptography.Cng/5.0.0": {
         "dependencies": {
-          "System.Formats.Asn1": "5.0.0"
+          "System.Formats.Asn1": "6.0.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/6.0.3": {
+        "dependencies": {
+          "System.Formats.Asn1": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1823.26907"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1823.26907"
+          }
         }
       },
       "System.Security.Cryptography.ProtectedData/6.0.0": {
@@ -743,6 +809,27 @@
       "sha512": "sha512-l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==",
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
+    },
+    "EPPlus/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fqDPDAB0v+sU1m0VxDy4jBKhH77BoiaGjglnzflUVoHDL3Bnf8Xf/V8/dm3uYhMwChExnqFXxYscslu46seZQQ==",
+      "path": "epplus/7.0.0",
+      "hashPath": "epplus.7.0.0.nupkg.sha512"
+    },
+    "EPPlus.Interfaces/6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y7dkrOoE1ZR9Vgy1Jf2rEIaTf3SHlUjYt01NklP+F5Qh7S2ruPbzTcpYLRWMeXiG8XL8h2jqX4CyIkFt3NQGZw==",
+      "path": "epplus.interfaces/6.1.1",
+      "hashPath": "epplus.interfaces.6.1.1.nupkg.sha512"
+    },
+    "EPPlus.System.Drawing/6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lRF5gHYrmkHOOiLMI0t6q8zNYjUrzRgAM5BCXumv5xiqXko8fx3AWI+HCNZfhEqVFGOop+42KfR5GiUcCoyoMw==",
+      "path": "epplus.system.drawing/6.1.1",
+      "hashPath": "epplus.system.drawing.6.1.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -989,6 +1076,13 @@
       "path": "microsoft.identitymodel.tokens/6.35.0",
       "hashPath": "microsoft.identitymodel.tokens.6.35.0.nupkg.sha512"
     },
+    "Microsoft.IO.RecyclableMemoryStream/2.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Oh1qXXFdJFcHozvb4H6XYLf2W0meZFuG0A+TfapFPj9z5fd4vxiARGEhAaLj/6XWQaMYIv4SH/9Q6H78Hw0E2Q==",
+      "path": "microsoft.io.recyclablememorystream/2.3.2",
+      "hashPath": "microsoft.io.recyclablememorystream.2.3.2.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1031,6 +1125,13 @@
       "path": "system.codedom/4.4.0",
       "hashPath": "system.codedom.4.4.0.nupkg.sha512"
     },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1052,12 +1153,12 @@
       "path": "system.drawing.common/6.0.0",
       "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
     },
-    "System.Formats.Asn1/5.0.0": {
+    "System.Formats.Asn1/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MTvUIktmemNB+El0Fgw9egyqT9AYSIk6DTJeoDSpc3GIHxHCMo8COqkWT1mptX5tZ1SlQ6HJZ0OsSvMth1c12w==",
-      "path": "system.formats.asn1/5.0.0",
-      "hashPath": "system.formats.asn1.5.0.0.nupkg.sha512"
+      "sha512": "sha512-T6fD00dQ3NTbPDy31m4eQUwKW84s03z0N2C8HpOklyeaDgaJPa/TexP4/SkORMSOwc7WhKifnA6Ya33AkzmafA==",
+      "path": "system.formats.asn1/6.0.0",
+      "hashPath": "system.formats.asn1.6.0.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/6.35.0": {
       "type": "package",
@@ -1128,6 +1229,13 @@
       "sha512": "sha512-jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==",
       "path": "system.security.cryptography.cng/5.0.0",
       "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/6.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-18UT1BdZ4TYFBHk/wuq7JzCdE3X75z81X+C2rXqIlmEnC21Pm60spGV/dKQSzbyomstqYE33EuN5hfnC86VFxA==",
+      "path": "system.security.cryptography.pkcs/6.0.3",
+      "hashPath": "system.security.cryptography.pkcs.6.0.3.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/6.0.0": {
       "type": "package",
