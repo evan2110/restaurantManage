@@ -9,6 +9,8 @@
     List<RateReveneuDTO> reveneuDtos = new List<RateReveneuDTO>();
     List<TopFoodDTO> topFoods = new List<TopFoodDTO>();
     List<Account> accounts = new List<Account>();
+    List<TableFood> tables = new List<TableFood>();
+
     int countPage = 0;
     int page = 0;
     int count = 1;
@@ -23,6 +25,11 @@
     }else if (mode == "ManageAcc")
     {
         accounts = ViewBag.accounts as List<Account>;
+        countPage = ViewBag.countPage;
+        page = ViewBag.page;
+    }else if (mode == "ManageTable")
+    {
+        tables = ViewBag.tables as List<TableFood>;
         countPage = ViewBag.countPage;
         page = ViewBag.page;
     }
@@ -49,7 +56,7 @@
             <ul>
                 <li><a href="/Dashboard">Thống kê</a></li>
                 <li><a href="/Dashboard?Mode=ManageAcc">Tài khoản</a></li>
-                <li><a href="#">Bàn ăn</a></li>
+                <li><a href="/Dashboard?Mode=ManageTable">Bàn ăn</a></li>
                 <li><a href="#">Danh mục</a></li>
                 <li><a href="#">Hóa đơn</a></li>
                 <li style="margin-top: 200%;"><a href="#">Đăng xuất</a></li>
@@ -132,7 +139,7 @@
                         <td>@(item.Type == 0 ? "Nhân viên" : "Quản lý")</td>
                         <td>
                             <a href="/Dashboard?mode=Account&username=@item.UserName" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="@Url.Action("Remove", "Dashboard", new { id = item.UserName })" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Are you sure you want to delete this account?');"><i class="material-icons">&#xE5C9;</i></a>
+                            <a href="@Url.Action("Remove", "Dashboard", new { id = item.UserName, mode = "account" })" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này không?');"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
                     </tr>
                     count++;
@@ -228,7 +235,126 @@
             </div>
             
         </form>
-    }
+    }else if (mode == "ManageTable")
+     {
+     <div class="table-responsive">
+         <div class="table-wrapper">
+             <div class="table-title">
+                 <div class="row">
+                     <div class="col-sm-5">
+                         <h2>Table <b>Management</b></h2>
+                     </div>
+                     <div class="col-sm-7">
+                         <a href="/Dashboard?Mode=Table" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Table</span></a>
+                         @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
+                     </div>
+                 </div>
+             </div>
+             <table class="table table-striped table-hover">
+                 <thead>
+                     <tr>
+                         <th>#</th>
+                         <th>Mã bàn</th>						
+                         <th>Tên bàn</th>
+                         <th>Tình trạng</th>
+                         <th>Hành động</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                 @foreach (var item in tables)
+                 {
+                     <tr>
+                         <td>@count</td>
+                         <td><a href="#">@item.Id</a></td>
+                         <td>@item.Name</td>
+                         <td>@(item.Status == "0" ? "Trống" : "Hết chổ")</td>
+                         <td>
+                             <a href="/Dashboard?mode=Table&tableId=@item.Id" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                             <a href="@Url.Action("Remove", "Dashboard", new { id = item.Id, mode = "table" })" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Bạn có chắc chắn muốn xóa tài khoản này không?');"><i class="material-icons">&#xE5C9;</i></a>
+                         </td>
+                     </tr>
+                     count++;
+                 }
+                 </tbody>
+             </table>
+             <div class="clearfix">
+                 <ul class="pagination">
+                     <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page-1)" class="page-link">Trang trước</a></li>
+                     
+                     @for (int i = 1; i <= @countPage; i++)
+                     {
+                         <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageTable&page=@i" class="page-link">@i</a></li>
+                     }
+                     <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page+1)" class="page-link">Trang sau</a></li>
+                 </ul>
+             </div>
+         </div>
+     </div>
+     }else if (mode == "Table")
+      {
+          <form asp-action="TableManage" asp-controller="Dashboard" method="post" class="form-horizontal">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">Thông tin bàn</h4>
+                  </div>
+                  <input name="tableId" value="@(ViewBag.table != null ? ViewBag.table.Id : "")" type="text" class="form-control" hidden>
+                  <div class="panel-body">
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label">Tên bàn</label>
+                          <div class="col-sm-10">
+                              <input name="name" value="@(ViewBag.table != null ? ViewBag.table.Name : "")" type="text" class="form-control" readonly="@(ViewBag.table != null ? true : false)" required>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 control-label">Tình trạng</label>
+                              <div class="col-sm-10">
+                                  <select name="status" class="form-control" required>
+                                      @if (ViewBag.table != null && ViewBag.table.Status == "0")
+                                      {
+                                          <option value="0" selected>Trống</option>
+                                          <option value="1">Hết chổ</option>
+                                      }
+                                      else if (ViewBag.table != null && ViewBag.table.Status == "1")
+                                      {
+                                          <option value="0">Trống</option>
+                                          <option value="1" selected>Hết chổ</option>
+                                      }
+                                      else
+                                      {
+                                          <option value="0">Trống</option>
+                                          <option value="1">Hết chổ</option>
+                                      }
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  @if (ViewBag.error != "")
+                  {
+                      <div class="col-sm-10">
+                          <p style="color: red;">@ViewBag.error</p>
+                      </div>
+                  }
+                  <div class="panel panel-default">
+                      <div class="panel-body">
+                          <div class="form-group">
+                              <div class="col-sm-10 col-sm-offset-2">
+                                  @if (ViewBag.table != null)
+                                  {
+                                      <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                  }
+                                  else
+                                  {
+                                      <button type="submit" class="btn btn-primary">Xác nhận</button>
+                                  }
+                                  <button type="reset" class="btn btn-default">Hủy</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+          </form>
+      }
 </div>
     <script src="script.js"></script>
 </body>
@@ -279,7 +405,7 @@
     }
     
     header {
-        background-color: #4CAF50;
+        background-color: #299be4;
         color: white;
         padding: 1em;
         text-align: center;

@@ -10,7 +10,7 @@ public class DashboardController : Controller
     private QuanLyNhaHangContext _context = new QuanLyNhaHangContext(); 
 
     // GET
-    public IActionResult Index(string? mode, int? page, string? username)
+    public IActionResult Index(string? mode, int? page, string? username, int? tableId)
     {
         if (mode == "Dashboard" || mode == null)
         {
@@ -72,6 +72,29 @@ public class DashboardController : Controller
             }
             ViewBag.error = TempData["error"];
             ViewBag.mode = "Account";
+        }else if (mode == "ManageTable")
+        {
+            page = page ?? 1;
+            List<TableFood> tables = new List<TableFood>();
+            List<TableFood> totalTable = new List<TableFood>();
+        
+            tables = _context.TableFoods.Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalTable = _context.TableFoods.ToList();
+            int countPage = (int)Math.Ceiling((double)totalTable.Count / 5);
+            
+            ViewBag.page = page;
+            ViewBag.tables = tables;
+            ViewBag.countPage = countPage;
+            ViewBag.mode = "ManageTable";
+        }else if (mode == "Table")
+        {
+            if (tableId != 0)
+            {
+                var table = _context.TableFoods.SingleOrDefault(e => e.Id == tableId);
+                ViewBag.table = table;
+            }
+            ViewBag.error = TempData["error"];
+            ViewBag.mode = "Table";
         }
         return View();
     }
@@ -80,21 +103,21 @@ public class DashboardController : Controller
     public IActionResult AccountManage(AccountManageDTO accountManageDto)
     {
         string error = "";
-        if (accountManageDto.UserName == "" || string.IsNullOrEmpty(accountManageDto.UserName))
+        if (accountManageDto.UserName.Trim() == "" || string.IsNullOrEmpty(accountManageDto.UserName.Trim()))
         {
             error = "Tên đăng nhập không thể trống"; 
             TempData["error"] = error;
             return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
         }
         
-        if (accountManageDto.PassWord == "" || string.IsNullOrEmpty(accountManageDto.PassWord))
+        if (accountManageDto.PassWord.Trim() == "" || string.IsNullOrEmpty(accountManageDto.PassWord.Trim()))
         {
             error = "Mật khẩu không thể trống"; 
             TempData["error"] = error;
             return RedirectToAction("Index", "Dashboard", new { Mode = "Account" });
         }
         
-        if (accountManageDto.PassWord.Length < 6)
+        if (accountManageDto.PassWord.Trim().Length < 6)
         {
             error = "Độ dài password không đủ kí tự"; 
             TempData["error"] = error;
@@ -104,8 +127,8 @@ public class DashboardController : Controller
         if (accountManageDto.Check != null)
         {
             var account = _context.Accounts.SingleOrDefault(e => e.UserName == accountManageDto.UserName);
-            account.DisplayName = accountManageDto.DisplayName;
-            account.PassWord = accountManageDto.PassWord;
+            account.DisplayName = accountManageDto.DisplayName.Trim();
+            account.PassWord = accountManageDto.PassWord.Trim();
             account.Type = accountManageDto.accountType;
 
             _context.Update(account);
@@ -113,7 +136,7 @@ public class DashboardController : Controller
         }
         else
         {
-            if (_context.Accounts.ToList().SingleOrDefault(e => e.UserName == accountManageDto.UserName) != null)
+            if (_context.Accounts.ToList().SingleOrDefault(e => e.UserName.ToLower().Trim() == accountManageDto.UserName.ToLower().Trim()) != null)
             {
                 error = "Tài khoản đã tồn tại"; 
                 TempData["error"] = error;
@@ -122,8 +145,8 @@ public class DashboardController : Controller
             
             Account account = new Account()
             {
-                UserName = accountManageDto.UserName, DisplayName = accountManageDto.DisplayName,
-                PassWord = accountManageDto.PassWord, Type = accountManageDto.accountType
+                UserName = accountManageDto.UserName.Trim(), DisplayName = accountManageDto.DisplayName.Trim(),
+                PassWord = accountManageDto.PassWord.Trim(), Type = accountManageDto.accountType
             };
             
             _context.Add(account);
@@ -133,14 +156,65 @@ public class DashboardController : Controller
         return RedirectToAction("Index", "Dashboard", new { Mode = "ManageAcc" });
     }
     
-    [HttpGet]
-    public IActionResult Remove(string? id)
+    [HttpPost]
+    public IActionResult TableManage(TableManageDTO tableManageDto)
     {
-        var account = _context.Accounts.SingleOrDefault(e => e.UserName == id);
-       
-        _context.Accounts.Remove(account);
-        _context.SaveChanges();
+        string error = "";
+        if (tableManageDto.Name.Trim() == "" || string.IsNullOrEmpty(tableManageDto.Name.Trim()))
+        {
+            error = "Tên bàn không thể trống"; 
+            TempData["error"] = error;
+            return RedirectToAction("Index", "Dashboard", new { Mode = "Table" });
+        }
         
-        return RedirectToAction("Index", "Dashboard", new { Mode = "ManageAcc" });
+        if (tableManageDto.TableId != 0)
+        {
+            var table = _context.TableFoods.SingleOrDefault(e => e.Id == tableManageDto.TableId);
+            table.Name = tableManageDto.Name.Trim();
+            table.Status = tableManageDto.Status.Trim();
+
+            _context.Update(table);
+            _context.SaveChanges();
+        }
+        else
+        {
+            if (_context.TableFoods.ToList().SingleOrDefault(e => e.Name.ToLower().Trim() == tableManageDto.Name.ToLower().Trim()) != null)
+            {
+                error = "Tên bàn đã tồn tại"; 
+                TempData["error"] = error;
+                return RedirectToAction("Index", "Dashboard", new { Mode = "Table" });
+            }
+            
+            TableFood table = new TableFood()
+            {
+                Name = tableManageDto.Name.Trim(), Status = tableManageDto.Status.Trim(),
+            };
+            
+            _context.Add(table);
+            _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index", "Dashboard", new { Mode = "ManageTable" });
+    }
+    
+    [HttpGet]
+    public IActionResult Remove(string? id, string? mode)
+    {
+        if (mode == "account")
+        {
+            var account = _context.Accounts.SingleOrDefault(e => e.UserName == id);
+       
+            _context.Accounts.Remove(account);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Dashboard", new { Mode = "ManageAcc" });
+        }else if (mode == "table")
+        {
+            var table = _context.TableFoods.SingleOrDefault(e => e.Id == int.Parse(id));
+       
+            _context.TableFoods.Remove(table);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Dashboard", new { Mode = "ManageTable" });
+        }
+        return null;
     }
 }
