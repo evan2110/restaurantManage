@@ -13,6 +13,8 @@ public class DetailBillController : Controller
         id = id ?? 0;
         var bill = _context.Bills.Include(e => e.BillInfos).ThenInclude(e => e.IdFoodNavigation).SingleOrDefault(e => e.Id == id);
         var tables = _context.TableFoods.Where(e => e.Status == "0").ToList();
+        var table = _context.TableFoods.SingleOrDefault(e => e.Id == bill.IdTable);
+        tables.Add(table);
         
         ViewBag.bill = bill;
         ViewBag.tables = tables;
