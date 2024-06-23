@@ -90,7 +90,7 @@ public class DashboardController : Controller
             ViewBag.mode = "ManageTable";
         }else if (mode == "Table")
         {
-            if (tableId != 0)
+            if (tableId != null)
             {
                 var table = _context.TableFoods.SingleOrDefault(e => e.Id == tableId);
                 ViewBag.table = table;
@@ -116,7 +116,7 @@ public class DashboardController : Controller
             List<FoodCategory> foodCategories = new List<FoodCategory>();
             foodCategories = _context.FoodCategories.ToList();
 
-            if (foodId != 0)
+            if (foodId != null)
             {
                 var food = _context.Foods.SingleOrDefault(e => e.Id == foodId);
                 ViewBag.food = food;
@@ -140,7 +140,7 @@ public class DashboardController : Controller
             ViewBag.mode = "ManageCategory";
         }else if (mode == "Category")
         {
-            if (categoryId != 0)
+            if (categoryId != null)
             {
                 var category = _context.FoodCategories.SingleOrDefault(e => e.Id == categoryId);
                 ViewBag.category = category;
@@ -165,7 +165,7 @@ public class DashboardController : Controller
         {
             List<TableFood> tables = new List<TableFood>();
             tables = _context.TableFoods.Where(e => e.Status == "0").ToList();
-            if (billId != 0)
+            if (billId != null)
             {
                 var bill = _context.Bills.SingleOrDefault(e => e.Id == billId);
                 var table = _context.TableFoods.SingleOrDefault(e => e.Id == bill.IdTable);
@@ -495,27 +495,33 @@ public class DashboardController : Controller
     [HttpGet]
     public IActionResult ExportToExcel()
     {
-        var bills = _context.Bills.ToList();
+        var bills = _context.Bills.Include(e => e.IdTableNavigation).ToList();
         
         using (var package = new ExcelPackage())
         {
-            var worksheet = package.Workbook.Worksheets.Add("Bills");
-            worksheet.Cells["A1"].Value = "Bill ID";
-            worksheet.Cells["B1"].Value = "Date";
-            worksheet.Cells["C1"].Value = "Total Price";
+            var worksheet = package.Workbook.Worksheets.Add("Hóa đơn");
+            worksheet.Cells["A1"].Value = "Mã hóa đơn";
+            worksheet.Cells["B1"].Value = "Ngày tạo";
+            worksheet.Cells["C1"].Value = "Ngày thanh toán";
+            worksheet.Cells["D1"].Value = "Tên bàn";
+            worksheet.Cells["E1"].Value = "Trạng thái";
+            worksheet.Cells["F1"].Value = "Tổng tiền";
 
             for (int i = 0; i < bills.Count; i++)
             {
                 worksheet.Cells[i + 2, 1].Value = bills[i].Id;
-                worksheet.Cells[i + 2, 2].Value = bills[i].DateCheckOut?.ToString("yyyy-MM-dd");
-                worksheet.Cells[i + 2, 3].Value = bills[i].TotalPrice;
+                worksheet.Cells[i + 2, 2].Value = bills[i].DateCheckIn.ToString("yyyy-MM-dd");
+                worksheet.Cells[i + 2, 3].Value = bills[i].DateCheckOut?.ToString("yyyy-MM-dd");
+                worksheet.Cells[i + 2, 4].Value = bills[i].IdTableNavigation.Name;
+                worksheet.Cells[i + 2, 5].Value = (bills[i].Status == 0) ? "Trống" : "Hết chổ";
+                worksheet.Cells[i + 2, 6].Value = bills[i].TotalPrice;
             }
 
             var stream = new MemoryStream();
             package.SaveAs(stream);
             var content = stream.ToArray();
 
-            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Bills.xlsx");
+            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Hóa_đơn.xlsx");
         }
     }
 }

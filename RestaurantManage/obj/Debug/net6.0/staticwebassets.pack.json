@@ -477,6 +477,10 @@
       "PackagePath": "staticwebassets\\img\\hero-img.jpg"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\Halls-Corner-04-copy.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\Halls-Corner-04-copy.jpg"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\slider-1.jpg",
       "PackagePath": "staticwebassets\\img\\home-slider\\slider-1.jpg"
     },
@@ -533,6 +537,10 @@
       "PackagePath": "staticwebassets\\img\\home-slider\\slider-9.jpg"
     },
     {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\home-slider\\twinlinehotel-yanbaruokinawa1.jpg",
+      "PackagePath": "staticwebassets\\img\\home-slider\\twinlinehotel-yanbaruokinawa1.jpg"
+    },
+    {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo-2.png",
       "PackagePath": "staticwebassets\\img\\logo-2.png"
     },
@@ -555,6 +563,18 @@
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logo.svg",
       "PackagePath": "staticwebassets\\img\\logo.svg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logoD.img",
+      "PackagePath": "staticwebassets\\img\\logoD.img"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logoD.jpg",
+      "PackagePath": "staticwebassets\\img\\logoD.jpg"
+    },
+    {
+      "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\logoD.png",
+      "PackagePath": "staticwebassets\\img\\logoD.png"
     },
     {
       "Id": "D:\\C Sharp\\restaurantManage\\RestaurantManage\\wwwroot\\img\\map-marker.png",

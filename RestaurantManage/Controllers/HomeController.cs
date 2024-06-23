@@ -6,6 +6,7 @@ namespace RestaurantManage.Controllers
 {
     public class HomeController : Controller
     {
+        private QuanLyNhaHangContext _context = new QuanLyNhaHangContext(); 
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -15,6 +16,8 @@ namespace RestaurantManage.Controllers
 
         public IActionResult Index()
         {
+            List<Food> foods = _context.Foods.OrderByDescending(e => e.Id).Take(8).ToList();
+            ViewBag.foods = foods;
             return View();
         }
 

@@ -178,13 +178,20 @@
 			
 			 window.submitOrder = function() {
 				const foods = [];
+				let hasSelectedFood = false;
 				quantitySelectors.forEach(input => {
 					const foodId = parseInt(input.getAttribute('data-id'));
 					const quantity = parseInt(input.value);
 					if (quantity > 0) {
 						foods.push({ Id: foodId, Quantity: quantity });
+						hasSelectedFood = true;
 					}
 				});
+				
+				if (!hasSelectedFood) {
+                        alert('Vui lòng chọn ít nhất một món để đặt hàng.');
+                        return; // Ngăn không cho submit form nếu không có món nào được chọn
+                    }
 	 			
 				const total = parseFloat(totalPriceElement.textContent.replace('Total: ', '').replace(' đ', ''));
 	

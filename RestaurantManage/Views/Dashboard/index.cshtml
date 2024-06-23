@@ -64,7 +64,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Quản Lý Doanh Thu Bán Hàng</title>
-    <link rel="stylesheet" href="styles.css">
+    @*<link rel="stylesheet" href="styles.css">*@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -92,7 +92,7 @@
     @if (mode == "Dashboard")
     {
         <header>
-                <h1>Dashboard Quản Lý Nhà Hàng</h1>
+                <h1>Quản Lý Nhà Hàng</h1>
             </header>
             <main>
                 <section class="stats">
@@ -135,10 +135,10 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Account <b>Management</b></h2>
+                        <h2>Quản Lý <b>Tài khoản</b></h2>
                     </div>
                     <div class="col-sm-7">
-                        <a href="/Dashboard?Mode=Account" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Account</span></a>
+                        <a href="/Dashboard?Mode=Account" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới tài khoản</span></a>
                         @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
                     </div>
                 </div>
@@ -253,7 +253,14 @@
                                 {
                                     <button type="submit" class="btn btn-primary">Xác nhận</button>
                                 }
-                                <button type="reset" class="btn btn-default">Hủy</button>
+                                <button type="reset" class="btn btn-default" id="cancelButton">Hủy</button>
+                                <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    document.getElementById("cancelButton").addEventListener("click", function() {
+                                        window.history.back();
+                                    });
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -268,10 +275,10 @@
              <div class="table-title">
                  <div class="row">
                      <div class="col-sm-5">
-                         <h2>Table <b>Management</b></h2>
+                         <h2>Quản Lý <b>Bàn Ăn</b></h2>
                      </div>
                      <div class="col-sm-7">
-                         <a href="/Dashboard?Mode=Table" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Table</span></a>
+                         <a href="/Dashboard?Mode=Table" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới bàn ăn</span></a>
                          @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
                      </div>
                  </div>
@@ -372,7 +379,14 @@
                                   {
                                       <button type="submit" class="btn btn-primary">Xác nhận</button>
                                   }
-                                  <button type="reset" class="btn btn-default">Hủy</button>
+                                  <button type="reset" class="btn btn-default" id="cancelButton">Hủy</button>
+                                  <script>
+                                  document.addEventListener("DOMContentLoaded", function() {
+                                      document.getElementById("cancelButton").addEventListener("click", function() {
+                                          window.history.back();
+                                      });
+                                  });
+                                  </script>
                               </div>
                           </div>
                       </div>
@@ -387,10 +401,10 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-5">
-                            <h2>Food <b>Management</b></h2>
+                            <h2>Quản Lý <b>Món Ăn</b></h2>
                         </div>
                         <div class="col-sm-7">
-                            <a href="/Dashboard?Mode=Food" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Food</span></a>
+                            <a href="/Dashboard?Mode=Food" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới món ăn</span></a>
                             @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
                         </div>
                     </div>
@@ -473,7 +487,7 @@
                              <div class="form-group">
                                   <label class="col-sm-2 control-label">Giá tiền</label>
                                   <div class="col-sm-10">
-                                      <input name="price" value="@(ViewBag.food != null ? ViewBag.food.Price : 0)" type="number" class="form-control"  required>
+                                      <input name="price" value="@(ViewBag.food != null ? ViewBag.food.Price : 0)" type="number" class="form-control"  required min="1">
                                   </div>
                               </div>
                          </div>
@@ -496,7 +510,14 @@
                                      {
                                          <button type="submit" class="btn btn-primary">Xác nhận</button>
                                      }
-                                     <button type="reset" class="btn btn-default">Hủy</button>
+                                     <button type="reset" class="btn btn-default" id="cancelButton">Hủy</button>
+                                     <script>
+                                     document.addEventListener("DOMContentLoaded", function() {
+                                       document.getElementById("cancelButton").addEventListener("click", function() {
+                                           window.history.back();
+                                       });
+                                     });
+                                     </script>
                                  </div>
                              </div>
                          </div>
@@ -511,10 +532,10 @@
                   <div class="table-title">
                       <div class="row">
                           <div class="col-sm-5">
-                              <h2>Category <b>Management</b></h2>
+                              <h2>Quản Lý <b>Danh Mục</b></h2>
                           </div>
                           <div class="col-sm-7">
-                              <a href="/Dashboard?Mode=Category" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Category</span></a>
+                              <a href="/Dashboard?Mode=Category" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới danh mục</span></a>
                               @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
                           </div>
                       </div>
@@ -591,7 +612,14 @@
                                        {
                                            <button type="submit" class="btn btn-primary">Xác nhận</button>
                                        }
-                                       <button type="reset" class="btn btn-default">Hủy</button>
+                                       <button type="reset" class="btn btn-default" id="cancelButton">Hủy</button>
+                                        <script>
+                                        document.addEventListener("DOMContentLoaded", function() {
+                                          document.getElementById("cancelButton").addEventListener("click", function() {
+                                              window.history.back();
+                                          });
+                                        });
+                                        </script>
                                    </div>
                                </div>
                            </div>
@@ -606,11 +634,11 @@
                   <div class="table-title">
                       <div class="row">
                           <div class="col-sm-5">
-                              <h2>Bill <b>Management</b></h2>
+                              <h2>Quản Lý <b>Hóa Đơn</b></h2>
                           </div>
                           <div class="col-sm-7">
-                              <a href="/Dashboard?Mode=Bill" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Bill</span></a>
-                              <a href="@Url.Action("ExportToExcel", "Dashboard")" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
+                              <a href="/Dashboard?Mode=Bill" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới hóa đơn</span></a>
+                              <a href="@Url.Action("ExportToExcel", "Dashboard")" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Xuất Excel</span></a>						
                           </div>
                       </div>
                   </div>
@@ -733,7 +761,7 @@
                          <div class="form-group">
                                <label class="col-sm-2 control-label">Giá tiền</label>
                                <div class="col-sm-10">
-                                   <input name="price" value="@(ViewBag.bill != null ? ViewBag.bill.TotalPrice : 0)" type="number" class="form-control"  required
+                                   <input name="price" value="@(ViewBag.bill != null ? ViewBag.bill.TotalPrice : 0)" type="number" class="form-control"  required  min="1"
                                     @(ViewBag.bill != null && (ViewBag.bill.Status == 1 || ViewBag.bill.Status == 2) ? "disabled" : "")>
                                </div>
                            </div>
@@ -756,7 +784,14 @@
                                        {
                                            <button type="submit" class="btn btn-primary">Xác nhận</button>
                                        }
-                                       <button type="reset" class="btn btn-default">Hủy</button>
+                                       <button type="reset" class="btn btn-default" id="cancelButton">Hủy</button>
+                                       <script>
+                                       document.addEventListener("DOMContentLoaded", function() {
+                                         document.getElementById("cancelButton").addEventListener("click", function() {
+                                             window.history.back();
+                                         });
+                                       });
+                                       </script>
                                    </div>
                                </div>
                            </div>
@@ -766,7 +801,6 @@
                </form>
            }
 </div>
-    <script src="script.js"></script>
 </body>
 </html>
 <style>
@@ -1072,5 +1106,6 @@ data.bestSellingProducts.forEach(product => {
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 });
+
 
 </script>
