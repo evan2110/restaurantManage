@@ -20,12 +20,12 @@ public class DashboardController : Controller
             double? totalReveneu;
             int? totalFoods;
             int? totalCust;
-            totalReveneu = _context.Bills.ToList().Sum(e => e.TotalPrice);
+            totalReveneu = _context.Bills.ToList().Where(e => e.Status == 1).Sum(e => e.TotalPrice);
             totalFoods = _context.Bills
                 .Where(e => e.Status == 1)
                 .SelectMany(bill => bill.BillInfos)
                 .Sum(billInfo => billInfo.Count);
-            totalCust = _context.Bills.Count();
+            totalCust = _context.Bills.Where(e => e.Status == 1).Count();
             List<RateReveneuDTO> reveneuDtos = new List<RateReveneuDTO>();
             int year = DateTime.Now.Year;
             for (int i = 1; i <= 12; i++)
@@ -36,7 +36,9 @@ public class DashboardController : Controller
 
             List<TopFoodDTO> topFoodDtos = new List<TopFoodDTO>();
             var topFoods = (from bill in _context.BillInfos
+                join billInfor in _context.Bills on bill.IdBill equals billInfor.Id
                 join food in _context.Foods on bill.IdFood equals food.Id
+                where billInfor.Status == 1
                 group new { food, bill } by new { food.Name, food.Price } into grp
                 orderby grp.Sum(x => x.bill.Count) descending
                 select new TopFoodDTO
@@ -82,7 +84,7 @@ public class DashboardController : Controller
             List<TableFood> tables = new List<TableFood>();
             List<TableFood> totalTable = new List<TableFood>();
         
-            tables = (search == null) ? _context.TableFoods.Skip((page.Value - 1) * 5).Take(5).ToList() : _context.TableFoods.Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            tables = (search == null) ? _context.TableFoods.OrderByDescending(e => e.Id).Skip((page.Value - 1) * 5).Take(5).ToList() : _context.TableFoods.OrderByDescending(e => e.Id).Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
             totalTable = (search == null) ? _context.TableFoods.ToList() : _context.TableFoods.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalTable.Count / 5);
             
@@ -106,7 +108,7 @@ public class DashboardController : Controller
             List<Food> foods = new List<Food>();
             List<Food> totalFood = new List<Food>();
         
-            foods = (search == null) ? _context.Foods.Include(e => e.IdCategoryNavigation).Skip((page.Value - 1) * 5).Take(5).ToList() : _context.Foods.Include(e => e.IdCategoryNavigation).Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            foods = (search == null) ? _context.Foods.OrderByDescending(e => e.Id).Include(e => e.IdCategoryNavigation).Skip((page.Value - 1) * 5).Take(5).ToList() : _context.Foods.OrderByDescending(e => e.Id).Include(e => e.IdCategoryNavigation).Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
             totalFood = (search == null) ? _context.Foods.ToList() : _context.Foods.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalFood.Count / 5);
 
@@ -134,7 +136,7 @@ public class DashboardController : Controller
             List<FoodCategory> categories = new List<FoodCategory>();
             List<FoodCategory> totalCategories = new List<FoodCategory>();
         
-            categories = (search == null) ? _context.FoodCategories.Skip((page.Value - 1) * 5).Take(5).ToList() : _context.FoodCategories.Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            categories = (search == null) ? _context.FoodCategories.OrderByDescending(e => e.Id).Skip((page.Value - 1) * 5).Take(5).ToList() : _context.FoodCategories.OrderByDescending(e => e.Id).Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
             totalCategories = (search == null) ? _context.FoodCategories.ToList() : _context.FoodCategories.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalCategories.Count / 5);
 
@@ -158,7 +160,7 @@ public class DashboardController : Controller
             List<Bill> bills = new List<Bill>();
             List<Bill> totalBills = new List<Bill>();
         
-            bills = _context.Bills.Include(e => e.IdTableNavigation).OrderByDescending(e => e.DateCheckIn).Skip((page.Value - 1) * 5).Take(5).ToList();
+            bills = _context.Bills.OrderByDescending(e => e.Id).Include(e => e.IdTableNavigation).Skip((page.Value - 1) * 5).Take(5).ToList();
             totalBills = _context.Bills.ToList();
             int countPage = (int)Math.Ceiling((double)totalBills.Count / 5);
 

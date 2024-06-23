@@ -19,7 +19,7 @@ public class HistoryController : Controller
         int countPage = (int)Math.Ceiling((double)totalBills.Count / 8);
         
         
-        bills = _context.Bills.Include(e => e.IdTableNavigation).Skip((page.Value - 1) * 10).Take(10).OrderByDescending(e => e.DateCheckIn).ToList();
+        bills = _context.Bills.Include(e => e.IdTableNavigation).OrderByDescending(e => e.Id).Skip((page.Value - 1) * 10).Take(10).ToList();
        
         ViewBag.countPage = countPage;
         ViewBag.page = page;
