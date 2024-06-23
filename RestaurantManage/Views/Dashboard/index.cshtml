@@ -13,6 +13,7 @@
     List<Food> foods = new List<Food>();
     List<FoodCategory> foodCategories = new List<FoodCategory>();
     List<Bill> bills = new List<Bill>();
+    string search = "";
 
     int countPage = 0;
     int page = 0;
@@ -30,16 +31,19 @@
         accounts = ViewBag.accounts as List<Account>;
         countPage = ViewBag.countPage;
         page = ViewBag.page;
+        search = ViewBag.search;
     }else if (mode == "ManageTable")
     {
         tables = ViewBag.tables as List<TableFood>;
         countPage = ViewBag.countPage;
         page = ViewBag.page;
+        search = ViewBag.search;
     }else if (mode == "ManageFood")
     {
         foods = ViewBag.foods as List<Food>;
         countPage = ViewBag.countPage;
         page = ViewBag.page;
+        search = ViewBag.search;
     }else if (mode == "Food")
     {
         foodCategories = ViewBag.foodCategories as List<FoodCategory>;
@@ -48,6 +52,7 @@
         foodCategories = ViewBag.categories as List<FoodCategory>;
         countPage = ViewBag.countPage;
         page = ViewBag.page;
+        search = ViewBag.search;
     }else if (mode == "ManageBill")
     {
         bills = ViewBag.bills as List<Bill>;
@@ -85,7 +90,9 @@
                 <li><i style="margin-right: 3px;" class="fa-solid fa-bowl-food"></i><a href="/Dashboard?Mode=ManageFood">Món ăn</a></li>
                 <li><i style="margin-right: 3px;" class="fa-solid fa-list"></i><a href="/Dashboard?Mode=ManageCategory">Danh mục</a></li>
                 <li><i style="margin-right: 3px;" class="fa-solid fa-money-bill-1-wave"></i><a href="/Dashboard?Mode=ManageBill">Hóa đơn</a></li>
+                @*
                 <li style="margin-top: 200%;"><i style="margin-right: 3px;" class="fa-solid fa-right-from-bracket"></i><a href="@Url.Action("Logout", "Login")">Đăng xuất</a></li>
+            *@
             </ul>
         </div>
 <div class="main-content" id="main-content">
@@ -139,8 +146,16 @@
                     </div>
                     <div class="col-sm-7">
                         <a href="/Dashboard?Mode=Account" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới tài khoản</span></a>
-                        @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
+                        <a href="#" class="btn btn-secondary" onclick="searchAccounts()"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm kiếm</span></a>
+                        <a class="btn btn-secondary"><input placeholder="Tên đăng nhập" value="@(ViewBag.search != null ? ViewBag.search : "")" type="text" id="searchInput"  name="search"/></a>
                     </div>
+                    <script>
+                        function searchAccounts() {
+                            var searchValue = document.getElementById('searchInput').value;
+                            var url = '/Dashboard?Mode=ManageAcc&Search=' + encodeURIComponent(searchValue);
+                            window.location.href = url;
+                        }
+                    </script>
                 </div>
             </div>
             <table class="table table-striped table-hover">
@@ -174,13 +189,13 @@
             </table>
             <div class="clearfix">
                 <ul class="pagination">
-                    <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page-1)" class="page-link">Trang trước</a></li>
+                    <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page-1)&search=@search" class="page-link">Trang trước</a></li>
                     
                     @for (int i = 1; i <= @countPage; i++)
                     {
-                        <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@i" class="page-link">@i</a></li>
+                        <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@i&search=@search" class="page-link">@i</a></li>
                     }
-                    <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page+1)" class="page-link">Trang sau</a></li>
+                    <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageAcc&page=@(page+1)&search=@search" class="page-link">Trang sau</a></li>
                 </ul>
             </div>
         </div>
@@ -279,7 +294,16 @@
                      </div>
                      <div class="col-sm-7">
                          <a href="/Dashboard?Mode=Table" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới bàn ăn</span></a>
-                         @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
+                         <a href="#" class="btn btn-secondary" onclick="searchTables()"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm kiếm</span></a>
+                         <a class="btn btn-secondary"><input placeholder="Tên bàn" value="@(ViewBag.search != null ? ViewBag.search : "")" type="text" id="searchInput"  name="search"/></a>
+                     </div>
+                     <script>
+                        function searchTables() {
+                            var searchValue = document.getElementById('searchInput').value;
+                            var url = '/Dashboard?Mode=ManageTable&Search=' + encodeURIComponent(searchValue);
+                            window.location.href = url;
+                        }
+                    </script>						
                      </div>
                  </div>
              </div>
@@ -312,17 +336,16 @@
              </table>
              <div class="clearfix">
                  <ul class="pagination">
-                     <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page-1)" class="page-link">Trang trước</a></li>
+                     <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page-1)&search=@search" class="page-link">Trang trước</a></li>
                      
                      @for (int i = 1; i <= @countPage; i++)
                      {
-                         <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageTable&page=@i" class="page-link">@i</a></li>
+                         <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageTable&page=@i&search=@search" class="page-link">@i</a></li>
                      }
-                     <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page+1)" class="page-link">Trang sau</a></li>
+                     <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageTable&page=@(page+1)&search=@search" class="page-link">Trang sau</a></li>
                  </ul>
              </div>
          </div>
-     </div>
      }else if (mode == "Table")
       {
           <form asp-action="TableManage" asp-controller="Dashboard" method="post" class="form-horizontal">
@@ -405,8 +428,17 @@
                         </div>
                         <div class="col-sm-7">
                             <a href="/Dashboard?Mode=Food" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới món ăn</span></a>
-                            @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
+                            <a href="#" class="btn btn-secondary" onclick="searchFoods()"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm kiếm</span></a>
+                            <a class="btn btn-secondary"><input placeholder="Tên món" value="@(ViewBag.search != null ? ViewBag.search : "")" type="text" id="searchInput"  name="search"/></a>
                         </div>
+                        <script>
+                        function searchFoods() {
+                            var searchValue = document.getElementById('searchInput').value;
+                            var url = '/Dashboard?Mode=ManageFood&Search=' + encodeURIComponent(searchValue);
+                            window.location.href = url;
+                        }
+                    </script>                       
+                    </div>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
@@ -440,17 +472,16 @@
                 </table>
                 <div class="clearfix">
                     <ul class="pagination">
-                        <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageFood&page=@(page-1)" class="page-link">Trang trước</a></li>
+                        <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageFood&page=@(page-1)&search=@search" class="page-link">Trang trước</a></li>
                         
                         @for (int i = 1; i <= @countPage; i++)
                         {
-                            <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageFood&page=@i" class="page-link">@i</a></li>
+                            <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageFood&page=@i&search=@search" class="page-link">@i</a></li>
                         }
-                        <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageFood&page=@(page+1)" class="page-link">Trang sau</a></li>
+                        <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageFood&page=@(page+1)&search=@search" class="page-link">Trang sau</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
         }else if (mode == "Food")
          {
              <form asp-action="FoodManage" asp-controller="Dashboard" method="post" class="form-horizontal">
@@ -536,7 +567,16 @@
                           </div>
                           <div class="col-sm-7">
                               <a href="/Dashboard?Mode=Category" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Thêm mới danh mục</span></a>
-                              @*<a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>*@						
+                              <a href="#" class="btn btn-secondary" onclick="searchCategorys()"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm kiếm</span></a>
+                              <a class="btn btn-secondary"><input placeholder="Tên danh mục" value="@(ViewBag.search != null ? ViewBag.search : "")" type="text" id="searchInput"  name="search"/></a>
+                          </div>
+                          <script>
+                        function searchCategorys() {
+                            var searchValue = document.getElementById('searchInput').value;
+                            var url = '/Dashboard?Mode=ManageCategory&Search=' + encodeURIComponent(searchValue);
+                            window.location.href = url;
+                            }
+                        </script>                          
                           </div>
                       </div>
                   </div>
@@ -567,17 +607,16 @@
                   </table>
                   <div class="clearfix">
                       <ul class="pagination">
-                          <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@(page-1)" class="page-link">Trang trước</a></li>
+                          <li class="page-item @(page == 1 ? "disabled" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@(page-1)&search=@search" class="page-link">Trang trước</a></li>
                           
                           @for (int i = 1; i <= @countPage; i++)
                           {
-                              <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@i" class="page-link">@i</a></li>
+                              <li class="page-item @(i == page ? "active" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@i&search=@search" class="page-link">@i</a></li>
                           }
-                          <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@(page+1)" class="page-link">Trang sau</a></li>
+                          <li class="page-item @(page == countPage ? "disabled" : "")"><a href="/Dashboard?Mode=ManageCategory&page=@(page+1)&search=@search" class="page-link">Trang sau</a></li>
                       </ul>
                   </div>
               </div>
-          </div>
           }else if (mode == "Category")
            {
                <form asp-action="CategoryManage" asp-controller="Dashboard" method="post" class="form-horizontal">

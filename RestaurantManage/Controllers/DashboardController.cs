@@ -12,7 +12,8 @@ public class DashboardController : Controller
     private QuanLyNhaHangContext _context = new QuanLyNhaHangContext(); 
 
     // GET
-    public IActionResult Index(string? mode, int? page, string? username, int? tableId, int? foodId, int? categoryId, int? billId)
+    public IActionResult Index(string? mode, int? page, string? username, int? tableId,
+        int? foodId, int? categoryId, int? billId, string? search)
     {
         if (mode == "Dashboard" || mode == null)
         {
@@ -57,13 +58,14 @@ public class DashboardController : Controller
             List<Account> accounts = new List<Account>();
             List<Account> totalAccount = new List<Account>();
         
-            accounts = _context.Accounts.Skip((page.Value - 1) * 5).Take(5).ToList();
-            totalAccount = _context.Accounts.ToList();
+            accounts = (search == null) ? _context.Accounts.Skip((page.Value - 1) * 5).Take(5).ToList() : _context.Accounts.Where(e => e.UserName == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalAccount = (search == null) ? _context.Accounts.ToList() : _context.Accounts.Where(e => e.UserName == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalAccount.Count / 5);
             
             ViewBag.page = page;
             ViewBag.accounts = accounts;
             ViewBag.countPage = countPage;
+            ViewBag.search = search;
             ViewBag.mode = "ManageAcc";
         }else if (mode == "Account")
         {
@@ -80,13 +82,14 @@ public class DashboardController : Controller
             List<TableFood> tables = new List<TableFood>();
             List<TableFood> totalTable = new List<TableFood>();
         
-            tables = _context.TableFoods.Skip((page.Value - 1) * 5).Take(5).ToList();
-            totalTable = _context.TableFoods.ToList();
+            tables = (search == null) ? _context.TableFoods.Skip((page.Value - 1) * 5).Take(5).ToList() : _context.TableFoods.Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalTable = (search == null) ? _context.TableFoods.ToList() : _context.TableFoods.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalTable.Count / 5);
             
             ViewBag.page = page;
             ViewBag.tables = tables;
             ViewBag.countPage = countPage;
+            ViewBag.search = search;
             ViewBag.mode = "ManageTable";
         }else if (mode == "Table")
         {
@@ -103,13 +106,14 @@ public class DashboardController : Controller
             List<Food> foods = new List<Food>();
             List<Food> totalFood = new List<Food>();
         
-            foods = _context.Foods.Include(e => e.IdCategoryNavigation).Skip((page.Value - 1) * 5).Take(5).ToList();
-            totalFood = _context.Foods.ToList();
+            foods = (search == null) ? _context.Foods.Include(e => e.IdCategoryNavigation).Skip((page.Value - 1) * 5).Take(5).ToList() : _context.Foods.Include(e => e.IdCategoryNavigation).Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalFood = (search == null) ? _context.Foods.ToList() : _context.Foods.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalFood.Count / 5);
 
             ViewBag.page = page;
             ViewBag.foods = foods;
             ViewBag.countPage = countPage;
+            ViewBag.search = search;
             ViewBag.mode = "ManageFood";
         }else if (mode == "Food")
         {
@@ -130,13 +134,14 @@ public class DashboardController : Controller
             List<FoodCategory> categories = new List<FoodCategory>();
             List<FoodCategory> totalCategories = new List<FoodCategory>();
         
-            categories = _context.FoodCategories.Skip((page.Value - 1) * 5).Take(5).ToList();
-            totalCategories = _context.FoodCategories.ToList();
+            categories = (search == null) ? _context.FoodCategories.Skip((page.Value - 1) * 5).Take(5).ToList() : _context.FoodCategories.Where(e => e.Name == search.Trim()).Skip((page.Value - 1) * 5).Take(5).ToList();
+            totalCategories = (search == null) ? _context.FoodCategories.ToList() : _context.FoodCategories.Where(e => e.Name == search.Trim()).ToList();
             int countPage = (int)Math.Ceiling((double)totalCategories.Count / 5);
 
             ViewBag.page = page;
             ViewBag.categories = categories;
             ViewBag.countPage = countPage;
+            ViewBag.search = search;
             ViewBag.mode = "ManageCategory";
         }else if (mode == "Category")
         {
